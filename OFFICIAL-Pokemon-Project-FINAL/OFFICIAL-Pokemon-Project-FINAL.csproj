@@ -46,14 +46,24 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
+    <Compile Include="Battle_Screen.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
+    <Compile Include="Battle_Screen.Designer.cs">
+      <DependentUpon>Battle_Screen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Pokemon.cs" />
+    <Compile Include="Start_Screen.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Start_Screen.Designer.cs">
+      <DependentUpon>Start_Screen.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="Battle_Screen.resx">
+      <DependentUpon>Battle_Screen.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -62,7 +72,11 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="Start_Screen.resx">
+      <DependentUpon>Start_Screen.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -75,6 +89,33 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\battle_screen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulbasaur.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bulbasaur_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charmander.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\charmander_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squirtle.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\squirtle_back.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\play_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\quit_button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
