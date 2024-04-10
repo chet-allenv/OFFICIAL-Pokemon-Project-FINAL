@@ -18,7 +18,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public string moveType { get; set; }
         public int powerPoints { get; set; }
 
-        // TO IMPLEMENT LATER
         
         public readonly PokemonType pt = new();
         public readonly Random rng = new Random();
