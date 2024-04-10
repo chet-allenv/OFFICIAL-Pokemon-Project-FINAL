@@ -28,7 +28,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         
 
-        // public Attack[] moveSet; TO BE IMPLEMENTED LATER
+        public Attack[] moveSet;
 
         private readonly Random rng = new Random();
 
@@ -45,7 +45,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             this.level = level;
             this.type = type;
 
-            //moveSet = new Attack[2];
+            moveSet = new Attack[2];
         }
 
         private int Generate_Stat(int low = 5, int high = 25)
@@ -55,10 +55,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public bool Is_Alive() { return this.health > 0; }
 
-        // to be implemented later
         public void Attack(int attackNumber, Pokemon target, ProgressBar targetHealthBar)
         {
-            // moveSet[attackNumber].Use(this, target, targetHealthBar);
+            moveSet[attackNumber].Use(this, target, targetHealthBar);
         }
 
         public Image Get_Front_Sprite()
@@ -77,7 +76,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public Charmander() : base("Charmander", Resources.charmander, Resources.charmander_back, "Fire", 5)
         {
-            // moveSet = [new Tackle_Attack(), new Ember_Attack()];
+            moveSet = [new Tackle_Attack(), new Ember_Attack()];
         }
     }
 
@@ -86,7 +85,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public Squirtle() : base("Squirtle", Resources.squirtle, Resources.squirtle_back, "Water", 5)
         {
-            //  moveSet = [new Tackle_Attack(), new Bubble_Attack()];
+            moveSet = [new Tackle_Attack(), new Bubble_Attack()];
         }
     }
 
@@ -95,7 +94,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public Bulbasaur() : base("Bulbasaur", Resources.bulbasaur, Resources.bulbasaur_back, "Grass", 5)
         {
-            // moveSet = [new Tackle_Attack(), new Vine_Whip_Attack()];
+            moveSet = [new Tackle_Attack(), new Vine_Whip_Attack()];
         }
     }
 }
