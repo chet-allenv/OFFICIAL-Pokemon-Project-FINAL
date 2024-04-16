@@ -168,7 +168,7 @@
             Attack_Button_2.TabIndex = 10;
             Attack_Button_2.Text = "Attack 2";
             Attack_Button_2.UseVisualStyleBackColor = true;
-            Attack_Button_2.Click += Attack_Button_2_Click;
+            Attack_Button_2.Click += Attack_Button_2_Click ;
             // 
             // Updater
             // 
