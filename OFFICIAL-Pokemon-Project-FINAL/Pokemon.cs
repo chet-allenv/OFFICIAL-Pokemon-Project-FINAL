@@ -36,7 +36,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
 
             this.name = name;
-            sprites = new[] { frontSprite, backSprite };
+            sprites = [frontSprite, backSprite];
             attack = Generate_Stat();
             defense = Generate_Stat();
             special = Generate_Stat();

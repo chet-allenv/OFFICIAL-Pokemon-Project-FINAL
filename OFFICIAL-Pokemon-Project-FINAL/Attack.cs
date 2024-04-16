@@ -33,7 +33,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             pt.Initialize_Type_Matchup();
         }
 
-        public virtual string Use(Pokemon user, Pokemon targetm, ProgressBar targetHealthBar)
+        public virtual string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
             return "Attack Used";
         }
@@ -152,14 +152,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                 int damage = Calculate_Damage(user, target, STAB, typeEffectiveness);
 
-                target.health -= damage;
-
-                if (target.health < 0)
+               
+                if (targetHealthBar.Value - damage < 0)
                 {
-                    target.health = 0;
+                    targetHealthBar.Value = 0;
                 }
 
-                targetHealthBar.Value = target.health;
+                else
+                {
+                    targetHealthBar.Value -= damage;
+                }
             }
 
             powerPoints -= 1;
