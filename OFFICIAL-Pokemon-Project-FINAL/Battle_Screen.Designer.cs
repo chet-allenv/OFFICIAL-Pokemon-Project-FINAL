@@ -55,9 +55,10 @@
             // 
             Enemy_Sprite.BackColor = System.Drawing.Color.Transparent;
             Enemy_Sprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            Enemy_Sprite.Location = new System.Drawing.Point(694, 119);
+            Enemy_Sprite.Location = new System.Drawing.Point(486, 71);
+            Enemy_Sprite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Enemy_Sprite.Name = "Enemy_Sprite";
-            Enemy_Sprite.Size = new System.Drawing.Size(401, 390);
+            Enemy_Sprite.Size = new System.Drawing.Size(281, 234);
             Enemy_Sprite.TabIndex = 0;
             Enemy_Sprite.TabStop = false;
             // 
@@ -65,9 +66,10 @@
             // 
             Player_Sprite.BackColor = System.Drawing.Color.Transparent;
             Player_Sprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            Player_Sprite.Location = new System.Drawing.Point(21, 386);
+            Player_Sprite.Location = new System.Drawing.Point(15, 232);
+            Player_Sprite.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Player_Sprite.Name = "Player_Sprite";
-            Player_Sprite.Size = new System.Drawing.Size(471, 363);
+            Player_Sprite.Size = new System.Drawing.Size(330, 218);
             Player_Sprite.TabIndex = 1;
             Player_Sprite.TabStop = false;
             // 
@@ -76,9 +78,10 @@
             Enemy_Name.AutoSize = true;
             Enemy_Name.BackColor = System.Drawing.Color.Transparent;
             Enemy_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Enemy_Name.Location = new System.Drawing.Point(-4, 90);
+            Enemy_Name.Location = new System.Drawing.Point(-3, 54);
+            Enemy_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             Enemy_Name.Name = "Enemy_Name";
-            Enemy_Name.Size = new System.Drawing.Size(259, 37);
+            Enemy_Name.Size = new System.Drawing.Size(180, 26);
             Enemy_Name.TabIndex = 2;
             Enemy_Name.Text = "Enemy Pokemon";
             // 
@@ -87,9 +90,10 @@
             Player_Name.AutoSize = true;
             Player_Name.BackColor = System.Drawing.Color.Transparent;
             Player_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Player_Name.Location = new System.Drawing.Point(659, 527);
+            Player_Name.Location = new System.Drawing.Point(497, 345);
+            Player_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             Player_Name.Name = "Player_Name";
-            Player_Name.Size = new System.Drawing.Size(250, 37);
+            Player_Name.Size = new System.Drawing.Size(173, 26);
             Player_Name.TabIndex = 3;
             Player_Name.Text = "Player Pokemon";
             // 
@@ -98,9 +102,10 @@
             Exit_Button.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
             Exit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             Exit_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Exit_Button.Location = new System.Drawing.Point(12, 12);
+            Exit_Button.Location = new System.Drawing.Point(8, 7);
+            Exit_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Exit_Button.Name = "Exit_Button";
-            Exit_Button.Size = new System.Drawing.Size(133, 49);
+            Exit_Button.Size = new System.Drawing.Size(93, 29);
             Exit_Button.TabIndex = 4;
             Exit_Button.Text = "EXIT";
             Exit_Button.UseVisualStyleBackColor = false;
@@ -111,9 +116,10 @@
             Rerun_Button.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
             Rerun_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             Rerun_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Rerun_Button.Location = new System.Drawing.Point(151, 12);
+            Rerun_Button.Location = new System.Drawing.Point(106, 7);
+            Rerun_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Rerun_Button.Name = "Rerun_Button";
-            Rerun_Button.Size = new System.Drawing.Size(158, 49);
+            Rerun_Button.Size = new System.Drawing.Size(111, 29);
             Rerun_Button.TabIndex = 5;
             Rerun_Button.Text = "RERUN";
             Rerun_Button.UseVisualStyleBackColor = false;
@@ -121,16 +127,18 @@
             // 
             // Enemy_Health_Bar
             // 
-            Enemy_Health_Bar.Location = new System.Drawing.Point(-4, 191);
+            Enemy_Health_Bar.Location = new System.Drawing.Point(-3, 115);
+            Enemy_Health_Bar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Enemy_Health_Bar.Name = "Enemy_Health_Bar";
-            Enemy_Health_Bar.Size = new System.Drawing.Size(343, 23);
+            Enemy_Health_Bar.Size = new System.Drawing.Size(240, 14);
             Enemy_Health_Bar.TabIndex = 6;
             // 
             // Damage_Button
             // 
-            Damage_Button.Location = new System.Drawing.Point(12, 263);
+            Damage_Button.Location = new System.Drawing.Point(8, 158);
+            Damage_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Damage_Button.Name = "Damage_Button";
-            Damage_Button.Size = new System.Drawing.Size(110, 64);
+            Damage_Button.Size = new System.Drawing.Size(77, 38);
             Damage_Button.TabIndex = 7;
             Damage_Button.Text = "DO 10 DAMAGE";
             Damage_Button.UseVisualStyleBackColor = true;
@@ -138,10 +146,10 @@
             // 
             // Heal_Button
             // 
-            Heal_Button.Location = new System.Drawing.Point(151, 260);
-            Heal_Button.Margin = new System.Windows.Forms.Padding(6, 5, 6, 5);
+            Heal_Button.Location = new System.Drawing.Point(106, 156);
+            Heal_Button.Margin = new System.Windows.Forms.Padding(4, 3, 4, 3);
             Heal_Button.Name = "Heal_Button";
-            Heal_Button.Size = new System.Drawing.Size(110, 71);
+            Heal_Button.Size = new System.Drawing.Size(77, 43);
             Heal_Button.TabIndex = 8;
             Heal_Button.Text = "Heal";
             Heal_Button.UseVisualStyleBackColor = true;
@@ -149,10 +157,9 @@
             // 
             // Attack_Button_1
             // 
-            Attack_Button_1.Location = new System.Drawing.Point(627, 777);
-            Attack_Button_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_1.Location = new System.Drawing.Point(439, 466);
             Attack_Button_1.Name = "Attack_Button_1";
-            Attack_Button_1.Size = new System.Drawing.Size(183, 225);
+            Attack_Button_1.Size = new System.Drawing.Size(128, 135);
             Attack_Button_1.TabIndex = 9;
             Attack_Button_1.Text = "Attack 1";
             Attack_Button_1.UseVisualStyleBackColor = true;
@@ -160,14 +167,13 @@
             // 
             // Attack_Button_2
             // 
-            Attack_Button_2.Location = new System.Drawing.Point(867, 777);
-            Attack_Button_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_2.Location = new System.Drawing.Point(607, 466);
             Attack_Button_2.Name = "Attack_Button_2";
-            Attack_Button_2.Size = new System.Drawing.Size(183, 225);
+            Attack_Button_2.Size = new System.Drawing.Size(128, 135);
             Attack_Button_2.TabIndex = 10;
             Attack_Button_2.Text = "Attack 2";
             Attack_Button_2.UseVisualStyleBackColor = true;
-            Attack_Button_2.Click += Attack_Button_2_Click ;
+            Attack_Button_2.Click += Attack_Button_2_Click;
             // 
             // Updater
             // 
@@ -175,10 +181,9 @@
             // 
             // Message_Box
             // 
-            Message_Box.Location = new System.Drawing.Point(80, 795);
-            Message_Box.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Message_Box.Location = new System.Drawing.Point(56, 477);
             Message_Box.Name = "Message_Box";
-            Message_Box.Size = new System.Drawing.Size(503, 207);
+            Message_Box.Size = new System.Drawing.Size(352, 124);
             Message_Box.TabIndex = 11;
             Message_Box.Text = "Place holder";
             // 
@@ -189,9 +194,10 @@
             // Sleep_Test_Button
             // 
             Sleep_Test_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            Sleep_Test_Button.Location = new System.Drawing.Point(340, 12);
+            Sleep_Test_Button.Location = new System.Drawing.Point(238, 7);
+            Sleep_Test_Button.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Sleep_Test_Button.Name = "Sleep_Test_Button";
-            Sleep_Test_Button.Size = new System.Drawing.Size(122, 49);
+            Sleep_Test_Button.Size = new System.Drawing.Size(85, 29);
             Sleep_Test_Button.TabIndex = 12;
             Sleep_Test_Button.Text = "Test Sleep Function";
             Sleep_Test_Button.UseVisualStyleBackColor = true;
@@ -199,16 +205,18 @@
             // 
             // Player_Health_Bar
             // 
-            Player_Health_Bar.Location = new System.Drawing.Point(831, 589);
+            Player_Health_Bar.Location = new System.Drawing.Point(563, 404);
+            Player_Health_Bar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Player_Health_Bar.Name = "Player_Health_Bar";
-            Player_Health_Bar.Size = new System.Drawing.Size(231, 28);
+            Player_Health_Bar.Size = new System.Drawing.Size(238, 11);
             Player_Health_Bar.TabIndex = 13;
             // 
             // Potion_Test
             // 
-            Potion_Test.Location = new System.Drawing.Point(377, 238);
+            Potion_Test.Location = new System.Drawing.Point(264, 143);
+            Potion_Test.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Potion_Test.Name = "Potion_Test";
-            Potion_Test.Size = new System.Drawing.Size(218, 93);
+            Potion_Test.Size = new System.Drawing.Size(153, 56);
             Potion_Test.TabIndex = 14;
             Potion_Test.Text = "Use Potion";
             Potion_Test.UseVisualStyleBackColor = true;
@@ -216,9 +224,10 @@
             // 
             // Test_Super_Potion
             // 
-            Test_Super_Potion.Location = new System.Drawing.Point(513, 27);
+            Test_Super_Potion.Location = new System.Drawing.Point(359, 16);
+            Test_Super_Potion.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Test_Super_Potion.Name = "Test_Super_Potion";
-            Test_Super_Potion.Size = new System.Drawing.Size(112, 122);
+            Test_Super_Potion.Size = new System.Drawing.Size(78, 73);
             Test_Super_Potion.TabIndex = 15;
             Test_Super_Potion.Text = "Use Super Potion";
             Test_Super_Potion.UseVisualStyleBackColor = true;
@@ -226,11 +235,11 @@
             // 
             // Battle_Screen
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.battle_screen;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ClientSize = new System.Drawing.Size(1146, 1063);
+            ClientSize = new System.Drawing.Size(802, 638);
             Controls.Add(Test_Super_Potion);
             Controls.Add(Potion_Test);
             Controls.Add(Player_Health_Bar);
@@ -247,6 +256,7 @@
             Controls.Add(Enemy_Name);
             Controls.Add(Player_Sprite);
             Controls.Add(Enemy_Sprite);
+            Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             Name = "Battle_Screen";
             Text = " ";
             Load += Battle_Screen_Load;
