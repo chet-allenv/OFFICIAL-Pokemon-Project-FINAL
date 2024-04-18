@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -14,10 +15,54 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public string Name { get; set; }
         public int Amount { get; set; }
 
+        public readonly Random rng = new();
+
         public Item(string name, int amount)
         {
             Name = name;
             Amount = amount;
+        }
+    }
+
+    // Pokeball logic https://bulbapedia.bulbagarden.net/wiki/Catch_rate
+
+    public class GenericPokeball : Item
+    {
+        public double CatchRate { get; set; }
+
+        public GenericPokeball(string name, int amount, double catchRate) : base(name, amount)
+        {
+            CatchRate = catchRate;
+        }
+
+        public virtual int Use(Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            return (int)((((targetHealthBar.Value * (1 + CatchRate) / target.health)) / 2) * 100);
+        }
+    }
+
+    public class Pokeball : GenericPokeball
+    {
+        public Pokeball() : base("Pokeball", 5, .25) { }
+    }
+    public class GreatBall : GenericPokeball
+    {
+        public GreatBall() : base("GreatBall", 3, .5) { }
+    }
+
+    public class UltraBall : GenericPokeball
+    {
+        public UltraBall() : base("UltraBall", 2, .75) { }
+    }
+
+    public class MasterBall : GenericPokeball
+    {
+        public MasterBall() : base("MasterBall", 1, 100.0) { }
+
+        public override int Use(Pokemon target, ProgressBar targetHealthBar)
+        {
+            return 100;
         }
     }
 

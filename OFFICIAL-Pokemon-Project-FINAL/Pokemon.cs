@@ -41,7 +41,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             defense = Generate_Stat();
             special = Generate_Stat();
             speed = Generate_Stat();
-            health = Generate_Stat(30, 70);
+            health = Generate_Stat(100, 280);
             this.level = level;
             this.type = type;
 

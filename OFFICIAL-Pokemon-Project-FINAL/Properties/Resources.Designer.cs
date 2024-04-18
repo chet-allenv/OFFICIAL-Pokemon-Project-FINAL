@@ -22,7 +22,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
     [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Resources.Tools.StronglyTypedResourceBuilder", "17.0.0.0")]
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    internal class Resources {
+    public class Resources {
         
         private static global::System.Resources.ResourceManager resourceMan;
         
@@ -36,7 +36,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         ///   Returns the cached ResourceManager instance used by this class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Resources.ResourceManager ResourceManager {
+        public static global::System.Resources.ResourceManager ResourceManager {
             get {
                 if (object.ReferenceEquals(resourceMan, null)) {
                     global::System.Resources.ResourceManager temp = new global::System.Resources.ResourceManager("OFFICIAL_Pokemon_Project_FINAL.Properties.Resources", typeof(Resources).Assembly);
@@ -51,7 +51,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         ///   resource lookups using this strongly typed resource class.
         /// </summary>
         [global::System.ComponentModel.EditorBrowsableAttribute(global::System.ComponentModel.EditorBrowsableState.Advanced)]
-        internal static global::System.Globalization.CultureInfo Culture {
+        public static global::System.Globalization.CultureInfo Culture {
             get {
                 return resourceCulture;
             }
@@ -63,7 +63,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap battle_screen {
+        public static System.Drawing.Bitmap battle_screen {
             get {
                 object obj = ResourceManager.GetObject("battle_screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -73,7 +73,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bulbasaur {
+        public static System.Drawing.Bitmap bulbasaur {
             get {
                 object obj = ResourceManager.GetObject("bulbasaur", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -83,7 +83,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap bulbasaur_back {
+        public static System.Drawing.Bitmap bulbasaur_back {
             get {
                 object obj = ResourceManager.GetObject("bulbasaur_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -93,7 +93,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap charmander {
+        public static System.Drawing.Bitmap charmander {
             get {
                 object obj = ResourceManager.GetObject("charmander", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -103,7 +103,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap charmander_back {
+        public static System.Drawing.Bitmap charmander_back {
             get {
                 object obj = ResourceManager.GetObject("charmander_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -113,7 +113,27 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap play_button {
+        public static System.Drawing.Bitmap greatball {
+            get {
+                object obj = ResourceManager.GetObject("greatball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap masterball {
+            get {
+                object obj = ResourceManager.GetObject("masterball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap play_button {
             get {
                 object obj = ResourceManager.GetObject("play_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -123,7 +143,17 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap quit_button {
+        public static System.Drawing.Bitmap pokeball {
+            get {
+                object obj = ResourceManager.GetObject("pokeball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap quit_button {
             get {
                 object obj = ResourceManager.GetObject("quit_button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -133,7 +163,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap squirtle {
+        public static System.Drawing.Bitmap squirtle {
             get {
                 object obj = ResourceManager.GetObject("squirtle", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
@@ -143,9 +173,19 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap squirtle_back {
+        public static System.Drawing.Bitmap squirtle_back {
             get {
                 object obj = ResourceManager.GetObject("squirtle_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap ultraball {
+            get {
+                object obj = ResourceManager.GetObject("ultraball", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

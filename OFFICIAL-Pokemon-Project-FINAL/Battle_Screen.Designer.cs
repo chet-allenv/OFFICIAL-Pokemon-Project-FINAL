@@ -38,8 +38,6 @@
             Enemy_Health_Bar = new System.Windows.Forms.ProgressBar();
             Damage_Button = new System.Windows.Forms.Button();
             Heal_Button = new System.Windows.Forms.Button();
-            Attack_Button_1 = new System.Windows.Forms.Button();
-            Attack_Button_2 = new System.Windows.Forms.Button();
             Updater = new System.Windows.Forms.Timer(components);
             Message_Box = new System.Windows.Forms.Label();
             Break_Timer = new System.Windows.Forms.Timer(components);
@@ -47,8 +45,27 @@
             Player_Health_Bar = new System.Windows.Forms.ProgressBar();
             Potion_Test = new System.Windows.Forms.Button();
             Test_Super_Potion = new System.Windows.Forms.Button();
+            TestShowAttackBox = new System.Windows.Forms.Button();
+            HealingItemButton = new System.Windows.Forms.Button();
+            CatchPokemonButton = new System.Windows.Forms.Button();
+            RunButton = new System.Windows.Forms.Button();
+            OptionPanelLayout = new System.Windows.Forms.TableLayoutPanel();
+            Attack_Button_1 = new System.Windows.Forms.Button();
+            Attack_Button_2 = new System.Windows.Forms.Button();
+            AttackPanelLayout = new System.Windows.Forms.TableLayoutPanel();
+            UsePokeballButton = new System.Windows.Forms.Button();
+            UseGreatBallButton = new System.Windows.Forms.Button();
+            UseUltraBallButton = new System.Windows.Forms.Button();
+            UseMasterBallButton = new System.Windows.Forms.Button();
+            PokeballPanelLayout = new System.Windows.Forms.TableLayoutPanel();
+            imageList1 = new System.Windows.Forms.ImageList(components);
+            pokeballPictureBox = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)Enemy_Sprite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player_Sprite).BeginInit();
+            OptionPanelLayout.SuspendLayout();
+            AttackPanelLayout.SuspendLayout();
+            PokeballPanelLayout.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pokeballPictureBox).BeginInit();
             SuspendLayout();
             // 
             // Enemy_Sprite
@@ -147,38 +164,16 @@
             Heal_Button.UseVisualStyleBackColor = true;
             Heal_Button.Click += Heal_Button_Click;
             // 
-            // Attack_Button_1
-            // 
-            Attack_Button_1.Location = new System.Drawing.Point(627, 777);
-            Attack_Button_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            Attack_Button_1.Name = "Attack_Button_1";
-            Attack_Button_1.Size = new System.Drawing.Size(183, 225);
-            Attack_Button_1.TabIndex = 9;
-            Attack_Button_1.Text = "Attack 1";
-            Attack_Button_1.UseVisualStyleBackColor = true;
-            Attack_Button_1.Click += Attack_Button_1_Click;
-            // 
-            // Attack_Button_2
-            // 
-            Attack_Button_2.Location = new System.Drawing.Point(867, 777);
-            Attack_Button_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            Attack_Button_2.Name = "Attack_Button_2";
-            Attack_Button_2.Size = new System.Drawing.Size(183, 225);
-            Attack_Button_2.TabIndex = 10;
-            Attack_Button_2.Text = "Attack 2";
-            Attack_Button_2.UseVisualStyleBackColor = true;
-            Attack_Button_2.Click += Attack_Button_2_Click;
-            // 
             // Updater
             // 
             Updater.Tick += Update;
             // 
             // Message_Box
             // 
-            Message_Box.Location = new System.Drawing.Point(80, 795);
+            Message_Box.Location = new System.Drawing.Point(21, 776);
             Message_Box.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Message_Box.Name = "Message_Box";
-            Message_Box.Size = new System.Drawing.Size(503, 207);
+            Message_Box.Size = new System.Drawing.Size(453, 74);
             Message_Box.TabIndex = 11;
             Message_Box.Text = "Place holder";
             // 
@@ -224,6 +219,179 @@
             Test_Super_Potion.UseVisualStyleBackColor = true;
             Test_Super_Potion.Click += Test_Super_Potion_Click;
             // 
+            // TestShowAttackBox
+            // 
+            TestShowAttackBox.Location = new System.Drawing.Point(3, 3);
+            TestShowAttackBox.Name = "TestShowAttackBox";
+            TestShowAttackBox.Size = new System.Drawing.Size(220, 79);
+            TestShowAttackBox.TabIndex = 17;
+            TestShowAttackBox.Text = "Attack";
+            TestShowAttackBox.UseVisualStyleBackColor = true;
+            TestShowAttackBox.Click += TestShowAttackBox_Click;
+            // 
+            // HealingItemButton
+            // 
+            HealingItemButton.Location = new System.Drawing.Point(229, 3);
+            HealingItemButton.Name = "HealingItemButton";
+            HealingItemButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            HealingItemButton.Size = new System.Drawing.Size(221, 79);
+            HealingItemButton.TabIndex = 18;
+            HealingItemButton.Text = "Healing Items";
+            HealingItemButton.UseVisualStyleBackColor = true;
+            HealingItemButton.Click += HealingItemButton_Click;
+            // 
+            // CatchPokemonButton
+            // 
+            CatchPokemonButton.Location = new System.Drawing.Point(3, 88);
+            CatchPokemonButton.Name = "CatchPokemonButton";
+            CatchPokemonButton.Size = new System.Drawing.Size(220, 79);
+            CatchPokemonButton.TabIndex = 19;
+            CatchPokemonButton.Text = "Catch Pokemon";
+            CatchPokemonButton.UseVisualStyleBackColor = true;
+            CatchPokemonButton.Click += CatchButton_Click;
+            // 
+            // RunButton
+            // 
+            RunButton.Location = new System.Drawing.Point(229, 88);
+            RunButton.Name = "RunButton";
+            RunButton.Size = new System.Drawing.Size(221, 79);
+            RunButton.TabIndex = 20;
+            RunButton.Text = "Run";
+            RunButton.UseVisualStyleBackColor = true;
+            RunButton.Click += RunButton_Click;
+            // 
+            // OptionPanelLayout
+            // 
+            OptionPanelLayout.BackColor = System.Drawing.Color.Transparent;
+            OptionPanelLayout.ColumnCount = 2;
+            OptionPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            OptionPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            OptionPanelLayout.Controls.Add(TestShowAttackBox, 0, 0);
+            OptionPanelLayout.Controls.Add(HealingItemButton, 1, 0);
+            OptionPanelLayout.Controls.Add(CatchPokemonButton, 0, 1);
+            OptionPanelLayout.Controls.Add(RunButton, 1, 1);
+            OptionPanelLayout.Location = new System.Drawing.Point(21, 853);
+            OptionPanelLayout.Name = "OptionPanelLayout";
+            OptionPanelLayout.RowCount = 2;
+            OptionPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            OptionPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            OptionPanelLayout.Size = new System.Drawing.Size(453, 170);
+            OptionPanelLayout.TabIndex = 11;
+            // 
+            // Attack_Button_1
+            // 
+            Attack_Button_1.Location = new System.Drawing.Point(4, 5);
+            Attack_Button_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_1.Name = "Attack_Button_1";
+            Attack_Button_1.Size = new System.Drawing.Size(301, 120);
+            Attack_Button_1.TabIndex = 9;
+            Attack_Button_1.Text = "Attack 1";
+            Attack_Button_1.UseVisualStyleBackColor = true;
+            Attack_Button_1.Click += Attack_Button_1_Click;
+            // 
+            // Attack_Button_2
+            // 
+            Attack_Button_2.Location = new System.Drawing.Point(313, 5);
+            Attack_Button_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_2.Name = "Attack_Button_2";
+            Attack_Button_2.Size = new System.Drawing.Size(302, 120);
+            Attack_Button_2.TabIndex = 10;
+            Attack_Button_2.Text = "Attack 2";
+            Attack_Button_2.UseVisualStyleBackColor = true;
+            Attack_Button_2.Click += Attack_Button_2_Click;
+            // 
+            // AttackPanelLayout
+            // 
+            AttackPanelLayout.BackColor = System.Drawing.Color.Transparent;
+            AttackPanelLayout.ColumnCount = 2;
+            AttackPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AttackPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AttackPanelLayout.Controls.Add(Attack_Button_1, 0, 0);
+            AttackPanelLayout.Controls.Add(Attack_Button_2, 1, 0);
+            AttackPanelLayout.Location = new System.Drawing.Point(496, 776);
+            AttackPanelLayout.Name = "AttackPanelLayout";
+            AttackPanelLayout.RowCount = 2;
+            AttackPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AttackPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AttackPanelLayout.Size = new System.Drawing.Size(619, 261);
+            AttackPanelLayout.TabIndex = 16;
+            AttackPanelLayout.Visible = false;
+            // 
+            // UsePokeballButton
+            // 
+            UsePokeballButton.Location = new System.Drawing.Point(3, 3);
+            UsePokeballButton.Name = "UsePokeballButton";
+            UsePokeballButton.Size = new System.Drawing.Size(301, 124);
+            UsePokeballButton.TabIndex = 17;
+            UsePokeballButton.Text = "Pokeball";
+            UsePokeballButton.UseVisualStyleBackColor = true;
+            UsePokeballButton.Click += UsePokeballButton_Click;
+            // 
+            // UseGreatBallButton
+            // 
+            UseGreatBallButton.Location = new System.Drawing.Point(310, 3);
+            UseGreatBallButton.Name = "UseGreatBallButton";
+            UseGreatBallButton.Size = new System.Drawing.Size(302, 124);
+            UseGreatBallButton.TabIndex = 18;
+            UseGreatBallButton.Text = "Greatball";
+            UseGreatBallButton.UseVisualStyleBackColor = true;
+            UseGreatBallButton.Click += UseGreatBallButton_Click;
+            // 
+            // UseUltraBallButton
+            // 
+            UseUltraBallButton.Location = new System.Drawing.Point(3, 133);
+            UseUltraBallButton.Name = "UseUltraBallButton";
+            UseUltraBallButton.Size = new System.Drawing.Size(301, 125);
+            UseUltraBallButton.TabIndex = 19;
+            UseUltraBallButton.Text = "Ultraball";
+            UseUltraBallButton.UseVisualStyleBackColor = true;
+            UseUltraBallButton.Click += UseUltraBallButton_Click;
+            // 
+            // UseMasterBallButton
+            // 
+            UseMasterBallButton.Location = new System.Drawing.Point(310, 133);
+            UseMasterBallButton.Name = "UseMasterBallButton";
+            UseMasterBallButton.Size = new System.Drawing.Size(302, 125);
+            UseMasterBallButton.TabIndex = 20;
+            UseMasterBallButton.Text = "Masterball";
+            UseMasterBallButton.UseVisualStyleBackColor = true;
+            UseMasterBallButton.Click += UseMasterBallButton_Click;
+            // 
+            // PokeballPanelLayout
+            // 
+            PokeballPanelLayout.ColumnCount = 2;
+            PokeballPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            PokeballPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            PokeballPanelLayout.Controls.Add(UsePokeballButton, 0, 0);
+            PokeballPanelLayout.Controls.Add(UseMasterBallButton, 1, 1);
+            PokeballPanelLayout.Controls.Add(UseGreatBallButton, 1, 0);
+            PokeballPanelLayout.Controls.Add(UseUltraBallButton, 0, 1);
+            PokeballPanelLayout.Location = new System.Drawing.Point(496, 776);
+            PokeballPanelLayout.Name = "PokeballPanelLayout";
+            PokeballPanelLayout.RowCount = 2;
+            PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            PokeballPanelLayout.Size = new System.Drawing.Size(615, 261);
+            PokeballPanelLayout.TabIndex = 21;
+            PokeballPanelLayout.Visible = false;
+            // 
+            // imageList1
+            // 
+            imageList1.ColorDepth = System.Windows.Forms.ColorDepth.Depth32Bit;
+            imageList1.ImageSize = new System.Drawing.Size(16, 16);
+            imageList1.TransparentColor = System.Drawing.Color.Transparent;
+            // 
+            // pokeballPictureBox
+            // 
+            pokeballPictureBox.BackColor = System.Drawing.Color.Transparent;
+            pokeballPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            pokeballPictureBox.Location = new System.Drawing.Point(806, 304);
+            pokeballPictureBox.Name = "pokeballPictureBox";
+            pokeballPictureBox.Size = new System.Drawing.Size(183, 180);
+            pokeballPictureBox.TabIndex = 22;
+            pokeballPictureBox.TabStop = false;
+            pokeballPictureBox.Visible = false;
+            // 
             // Battle_Screen
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
@@ -231,13 +399,15 @@
             BackgroundImage = Properties.Resources.battle_screen;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(1146, 1063);
+            Controls.Add(pokeballPictureBox);
+            Controls.Add(PokeballPanelLayout);
+            Controls.Add(AttackPanelLayout);
+            Controls.Add(OptionPanelLayout);
             Controls.Add(Test_Super_Potion);
             Controls.Add(Potion_Test);
             Controls.Add(Player_Health_Bar);
             Controls.Add(Sleep_Test_Button);
             Controls.Add(Message_Box);
-            Controls.Add(Attack_Button_2);
-            Controls.Add(Attack_Button_1);
             Controls.Add(Heal_Button);
             Controls.Add(Damage_Button);
             Controls.Add(Enemy_Health_Bar);
@@ -252,6 +422,10 @@
             Load += Battle_Screen_Load;
             ((System.ComponentModel.ISupportInitialize)Enemy_Sprite).EndInit();
             ((System.ComponentModel.ISupportInitialize)Player_Sprite).EndInit();
+            OptionPanelLayout.ResumeLayout(false);
+            AttackPanelLayout.ResumeLayout(false);
+            PokeballPanelLayout.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)pokeballPictureBox).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -267,8 +441,6 @@
         private System.Windows.Forms.ProgressBar Enemy_Health_Bar;
         private System.Windows.Forms.Button Damage_Button;
         private System.Windows.Forms.Button Heal_Button;
-        private System.Windows.Forms.Button Attack_Button_1;
-        private System.Windows.Forms.Button Attack_Button_2;
         private System.Windows.Forms.Timer Updater;
         private System.Windows.Forms.Label Message_Box;
         private System.Windows.Forms.Timer Break_Timer;
@@ -276,5 +448,20 @@
         private System.Windows.Forms.ProgressBar Player_Health_Bar;
         private System.Windows.Forms.Button Potion_Test;
         private System.Windows.Forms.Button Test_Super_Potion;
+        private System.Windows.Forms.Button TestShowAttackBox;
+        private System.Windows.Forms.Button HealingItemButton;
+        private System.Windows.Forms.Button CatchPokemonButton;
+        private System.Windows.Forms.Button RunButton;
+        private System.Windows.Forms.TableLayoutPanel OptionPanelLayout;
+        private System.Windows.Forms.Button Attack_Button_1;
+        private System.Windows.Forms.Button Attack_Button_2;
+        private System.Windows.Forms.TableLayoutPanel AttackPanelLayout;
+        private System.Windows.Forms.Button UsePokeballButton;
+        private System.Windows.Forms.Button UseGreatBallButton;
+        private System.Windows.Forms.Button UseUltraBallButton;
+        private System.Windows.Forms.Button UseMasterBallButton;
+        private System.Windows.Forms.TableLayoutPanel PokeballPanelLayout;
+        private System.Windows.Forms.ImageList imageList1;
+        private System.Windows.Forms.PictureBox pokeballPictureBox;
     }
 }

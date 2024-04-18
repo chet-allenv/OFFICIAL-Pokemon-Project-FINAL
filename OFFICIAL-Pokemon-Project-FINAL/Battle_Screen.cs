@@ -1,4 +1,5 @@
-﻿using System;
+﻿using OFFICIAL_Pokemon_Project_FINAL.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -28,6 +29,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         private readonly Random rng = new Random();
 
         public List<HealingItem> inventory = [new Potion(), new SuperPotion(), new HyperPotion()];
+        public List<GenericPokeball> pokeballs = [new Pokeball(), new GreatBall(), new UltraBall(), new MasterBall()];
 
         public int turnNumber = 0;
 
@@ -92,6 +94,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Attack_Button_2.Text = $"{playerPokemon.moveSet[1].name}\nPP:{playerPokemon.moveSet[1].powerPoints}";
             Attack_Button_2.BackColor = Decide_Type_Color(playerPokemon.moveSet[1].moveType);
 
+            UsePokeballButton.Text = $"Pokeball: {pokeballs[0].Amount}";
+            UseGreatBallButton.Text = $"GreatBall: {pokeballs[1].Amount}";
+            UseUltraBallButton.Text = $"UltraBall: {pokeballs[2].Amount}";
+            UseMasterBallButton.Text = $"MasterBall: {pokeballs[3].Amount}";
+
             SetStartingTurnNumber();
 
             // MUST BE LAST
@@ -101,7 +108,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         }
 
         public async void Test_Sleep_Method()
-        { 
+        {
             Message_Box.Text = "Im going to sleep";
 
             await Task.Run(() => Delay(5));
@@ -203,6 +210,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 0);
             Attack_Button_1.Text = $"{playerPokemon.moveSet[0].name}\nPP:{playerPokemon.moveSet[0].powerPoints}";
 
+            AttackPanelLayout.Visible = false;
+
         }
 
         private void Attack_Button_2_Click(object sender, EventArgs e)
@@ -217,6 +226,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 1);
             Attack_Button_2.Text = $"{playerPokemon.moveSet[1].name}\nPP:{playerPokemon.moveSet[1].powerPoints}";
 
+            AttackPanelLayout.Visible = false;
         }
 
         private void Update_Message_Box_Text(Pokemon user, Pokemon target, ProgressBar targetHealthBar, int attackNumber)
@@ -226,6 +236,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             message += $"\n{user.moveSet[attackNumber].Calculate_Type_Effectiveness(target).message}";
 
             Message_Box.Text = message;
+            TestShowAttackBox.Visible = true;
         }
 
         private void Sleep_Test_Button_Click(object sender, EventArgs e)
@@ -268,7 +279,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public async void RunGame()
         {
 
-            await Task.Run(() => Delay(4));
+            await Task.Run(() => Delay(2));
 
             while (playerPokemon.Is_Alive() && enemyPokemon.Is_Alive())
             {
@@ -299,7 +310,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 }
             }
 
-            
+
         }
 
         private void Test_Super_Potion_Click(object sender, EventArgs e)
@@ -309,7 +320,122 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         private void Break_Timer_Tick(object sender, EventArgs e)
         {
-            
+
+        }
+
+        private void TestShowAttackBox_Click(object sender, EventArgs e)
+        {
+            if (!is_Player_Turn)
+            {
+                return;
+            }
+            AttackPanelLayout.Visible = true;
+        }
+
+        private void CatchButton_Click(object sender, EventArgs e)
+        {   
+            if (!is_Player_Turn)
+            {
+                return;
+            }
+            PokeballPanelLayout.Visible = true;
+        }
+
+        private void HealingItemButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void RunButton_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void UsePokeballButton_Click(object sender, EventArgs e)
+        {
+            pokeballs[0].Amount--;
+
+            if (CatchPokemon(0))
+            {
+                Message_Box.Text = $"You caught the {enemyPokemon.name} using a Pokeball!";
+                Enemy_Sprite.Visible = false;
+                pokeballPictureBox.Visible = true;
+                pokeballPictureBox.BackgroundImage = Resources.pokeball;
+            }
+            else
+            {
+                Message_Box.Text = $"You failed to catch the {enemyPokemon.name}";
+            }
+
+            UsePokeballButton.Text = $"Pokeball: {pokeballs[0].Amount}";
+        }
+        private bool CatchPokemon(int inventoryNumber)
+        {
+            int testNumber = rng.Next(0, 101);
+
+            int catchRate = pokeballs[inventoryNumber].Use(enemyPokemon, Enemy_Health_Bar);
+
+            Debug.WriteLine($"Test Number: {testNumber}\nCatch Rate: {catchRate}\n Pokemon is caught: {catchRate >= testNumber}");
+
+            return catchRate >= testNumber;
+        }
+
+        private void UseGreatBallButton_Click(object sender, EventArgs e)
+        {
+            pokeballs[1].Amount--;
+
+            if (CatchPokemon(1))
+            {
+                Message_Box.Text = $"You caught the {enemyPokemon.name} using a Greatball!";
+                Enemy_Sprite.Visible = false;
+                pokeballPictureBox.Visible = true;
+                pokeballPictureBox.BackgroundImage = Resources.greatball;
+            }
+
+            else
+            {
+                Message_Box.Text = $"You failed to catch the {enemyPokemon.name}";
+            }
+
+            UsePokeballButton.Text = $"Pokeball: {pokeballs[1].Amount}";
+        }
+
+        private void UseUltraBallButton_Click(object sender, EventArgs e)
+        {
+            pokeballs[2].Amount--;
+
+            if (CatchPokemon(2))
+            {
+                Message_Box.Text = $"You caught the {enemyPokemon.name} using an Ultraball!";
+                Enemy_Sprite.Visible = false;
+                pokeballPictureBox.Visible = true;
+                pokeballPictureBox.BackgroundImage = Resources.ultraball;
+            }
+            else
+            {
+                Message_Box.Text = $"You failed to catch the {enemyPokemon.name}";
+            }
+
+            UsePokeballButton.Text = $"Pokeball: {pokeballs[2].Amount}";
+        }
+
+        private void UseMasterBallButton_Click(object sender, EventArgs e)
+        {
+            pokeballs[3].Amount--;
+
+            if (CatchPokemon(3))
+            {
+                Message_Box.Text = $"You caught the {enemyPokemon.name} using a Masterball!";
+                Enemy_Sprite.Visible = false;
+                pokeballPictureBox.Visible = true;
+                pokeballPictureBox.BackgroundImage = Resources.masterball;
+            }
+            else
+            {
+                Message_Box.Text = $"You failed to catch the {enemyPokemon.name}";
+            }
+
+            UsePokeballButton.Text = $"Pokeball: {pokeballs[3].Amount}";
         }
     }
 }
