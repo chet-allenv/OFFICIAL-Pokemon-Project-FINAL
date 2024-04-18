@@ -26,6 +26,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public int level { get; set; }
         public string type { get; set; }
 
+        public string Status { get; set; } = "";
+
         
 
         public Attack[] moveSet;

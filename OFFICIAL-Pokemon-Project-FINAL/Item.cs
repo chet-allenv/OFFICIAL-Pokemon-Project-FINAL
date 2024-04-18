@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualBasic.ApplicationServices;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Security.Cryptography;
 using System.Text;
@@ -30,40 +31,58 @@ namespace OFFICIAL_Pokemon_Project_FINAL
     {
         public double CatchRate { get; set; }
 
+
         public GenericPokeball(string name, int amount, double catchRate) : base(name, amount)
         {
             CatchRate = catchRate;
         }
 
-        public virtual int Use(Pokemon target, ProgressBar targetHealthBar)
+        private double GetStatusCatchAffect(Pokemon target)
         {
+            string[] minorAffects = ["poisoned", "paralyzed", "burned"];
+            string[] majorAffects = ["asleep", "frozen"];
 
-            return (int)((((targetHealthBar.Value * (1 + CatchRate) / target.health)) / 2) * 100);
+            if (minorAffects.Contains(target.Status.ToLower()))
+            {
+                return 1.5;
+            }
+            if (majorAffects.Contains(target.Status.ToLower()))
+            {
+                return 2;
+            }
+            else
+            {
+                return 1;
+            }
+
+        }
+
+        public virtual double Use(Pokemon target, ProgressBar targetHealthBar)
+        {
+            double calculatedResult = (((3 * target.health) - (2 * targetHealthBar.Value)) * 128 * CatchRate / (3 * target.health))  * GetStatusCatchAffect(target);
+            Debug.WriteLine(calculatedResult);
+            return calculatedResult;
         }
     }
 
     public class Pokeball : GenericPokeball
     {
-        public Pokeball() : base("Pokeball", 5, .25) { }
+        public Pokeball() : base("Pokeball", 5, 1) { }
     }
     public class GreatBall : GenericPokeball
     {
-        public GreatBall() : base("GreatBall", 3, .5) { }
+        public GreatBall() : base("GreatBall", 3, 1.5) { }
     }
 
     public class UltraBall : GenericPokeball
     {
-        public UltraBall() : base("UltraBall", 2, .75) { }
+        public UltraBall() : base("UltraBall", 2, 2) { }
     }
 
     public class MasterBall : GenericPokeball
     {
-        public MasterBall() : base("MasterBall", 1, 100.0) { }
+        public MasterBall() : base("MasterBall", 1, 255) { }
 
-        public override int Use(Pokemon target, ProgressBar targetHealthBar)
-        {
-            return 100;
-        }
     }
 
     public class HealingItem : Item

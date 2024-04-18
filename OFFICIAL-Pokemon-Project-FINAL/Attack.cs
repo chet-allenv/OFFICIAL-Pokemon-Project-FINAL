@@ -183,7 +183,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
     public class Tackle_Attack : Physical_Attack
     {
-        public Tackle_Attack() : base(30, 70, "Tackle", "Normal", 1) { }
+        public Tackle_Attack() : base(30, 70, "Tackle", "Normal", 30) { }
     }
 
     public class Ember_Attack : Special_Attack
