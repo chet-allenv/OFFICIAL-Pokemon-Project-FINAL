@@ -100,14 +100,15 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                 int damage = Calculate_Damage(user, target, STAB, typeEffectiveness);
 
-                target.health -= damage;
-
-                if (target.health < 0)
+                if (targetHealthBar.Value - damage < 0)
                 {
-                    target.health = 0;
+                    targetHealthBar.Value = 0;
                 }
 
-                targetHealthBar.Value = target.health;
+                else
+                {
+                    targetHealthBar.Value -= damage;
+                }
             }
 
             powerPoints -= 1;
@@ -205,5 +206,24 @@ namespace OFFICIAL_Pokemon_Project_FINAL
     public class Vine_Whip_Attack : Special_Attack
     {
         public Vine_Whip_Attack() : base(30, 80, "Vine Whip", "Grass", 30) { }
+    }
+
+    public class Sleep_Attack : Special_Attack
+    {
+        public Sleep_Attack() : base(0, 100, "Sleep Attack", "Normal", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (powerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "asleep";
+            powerPoints--;
+
+            return $"{user.name} used sleep attack and put {target.name} to sleep!";
+        }
     }
 }

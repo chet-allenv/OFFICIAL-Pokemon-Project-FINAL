@@ -116,6 +116,18 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             return $"You used {Name}";
         }
+
+        public virtual string UseItem(Pokemon user)
+        {
+            if (Amount <= 0)
+            {
+                throw new Exception();
+            }
+
+            Amount -= 1;
+
+            return $"You used {Name}";
+        }
     }
 
     public class Potion : HealingItem
@@ -135,9 +147,12 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
     public class FullHeal : HealingItem
     {
-        public FullHeal() : base("Full Heal", 3, 100)
+        public FullHeal() : base("Full Heal", 3, 100) {}
+
+        public override string UseItem(Pokemon user)
         {
-            // IMPLEMENT LATER
+            user.Status = "";
+            return $"You used {Name}. Your {user.name} is no longer suffering from any status effects.";
         }
 
     }

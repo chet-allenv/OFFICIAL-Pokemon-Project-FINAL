@@ -96,7 +96,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public Bulbasaur() : base("Bulbasaur", Resources.bulbasaur, Resources.bulbasaur_back, "Grass", 5)
         {
-            moveSet = [new Tackle_Attack(), new Vine_Whip_Attack()];
+            moveSet = [new Sleep_Attack(), new Vine_Whip_Attack()];
         }
     }
 }
