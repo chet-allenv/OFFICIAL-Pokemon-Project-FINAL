@@ -51,6 +51,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Player_Health_Bar.Maximum = playerPokemon.health;
             Player_Health_Bar.Value = playerPokemon.health;
 
+            updateStatusLabels();
+
             Debug.WriteLine(Enemy_Health_Bar.Value);
             Debug.WriteLine(enemyPokemon.health);
         }
@@ -302,109 +304,149 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             await Task.Run(() => Delay(4));
 
+            int roundCounter = 0;
+
             while (PlayerIsAlive() && EnemyIsAlive() && !ranAway)
             {
-                int roundCounter = 0;
-
                 if (turnNumber == 0)
                 {
+                    roundCounter++;
+
+                    bool canAttack = true;
+
                     if (playerPokemon.Status == "asleep" || playerPokemon.Status == "frozen")
                     {
                         Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} and unable to attack!";
 
                         await Task.Run(() => Delay(4));
+
+                        canAttack = false;
                     }
-                    else if (playerPokemon.Status == "paralyzed")
+                    if (playerPokemon.Status == "paralyzed")
                     {
-                        int testParalysis = rng.Next(0, 3);
-
-                        if (testParalysis == 0)
-                        {
-                            Message_Box.Text = $"Enemy {playerPokemon.name} is {playerPokemon.Status} and unable to attack!";
-                        }
-                    }
-                    else
-                    {
-                        Message_Box.Text = "It's your turn, press the button of the option you would like to do!";
-
-                        is_Player_Turn = true;
-
-                        while (!is_Option_Button_Pressed)
-                        {
-                            await Task.Delay(1);
-                        }
-
-                        while (!is_Attack_Button_Pressed && !is_Pokeball_Button_Pressed && !is_Healing_Item_Button_Pressed && !is_Run_Button_Pressed)
-                        {
-                            await Task.Delay(1);
-                        }
+                        Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} and may be unable to attack!";
 
                         await Task.Run(() => Delay(4));
 
-
-                        is_Player_Turn = false;
-                        is_Attack_Button_Pressed = false;
-                        is_Option_Button_Pressed = false;
-                        is_Pokeball_Button_Pressed = false;
-                        is_Healing_Item_Button_Pressed = false;
-                        is_Run_Button_Pressed = false;
-                    }
-
-                    turnNumber = 1;
-                }
-                else
-                {
-
-                    if (enemyPokemon.Status == "asleep" || enemyPokemon.Status == "frozen")
-                    {
-                        Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and unable to attack!";
-                    }
-                    else if (enemyPokemon.Status == "paralyzed")
-                    {
                         int testParalysis = rng.Next(0, 3);
+
+                        Debug.WriteLine(testParalysis);
 
                         if (testParalysis == 0)
                         {
-                            Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and unable to attack!";
+                            Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} it can't move!";
+
+                            await Task.Run(() => Delay(4));
+
+                            canAttack = false;
                         }
                     }
+                    
+                    Message_Box.Text = "It's your turn, press the button of the option you would like to do!";
 
-                    else
+                    is_Player_Turn = true;
+
+                    if (!canAttack)
                     {
-                        bool[] testedNums = [enemyPokemon.moveSet[0].powerPoints > 0, enemyPokemon.moveSet[1].powerPoints > 0];
+                        ShowAttackBox.Visible = false;
+                    }
 
-                        bool outOfMoves = testedNums.All(var => var == false);
+                    while (!is_Option_Button_Pressed)
+                    {
+                        await Task.Delay(1);
+                    }
 
-                        bool attackUsed = false;
-
-
-                        if (!outOfMoves)
-                        {
-                            while (!attackUsed)
-                            {
-                                int randAttackNum = rng.Next(0, 2);
-
-                                if (testedNums[randAttackNum] == false)
-                                {
-                                    continue;
-                                }
-                                else { Update_Message_Box_Text(enemyPokemon, playerPokemon, Player_Health_Bar, randAttackNum); attackUsed = true; }
-                            }
-                        }
-                        else
-                        {
-                            Message_Box.Text = "The Enemy is out of usable moves! It ran around panicking!";
-                        }
+                    while (!is_Attack_Button_Pressed && !is_Pokeball_Button_Pressed && !is_Healing_Item_Button_Pressed && !is_Run_Button_Pressed)
+                    {
+                        await Task.Delay(1);
                     }
 
                     await Task.Run(() => Delay(4));
 
-                    turnNumber = 0;
-                 
 
+                    is_Player_Turn = false;
+                    is_Attack_Button_Pressed = false;
+                    is_Option_Button_Pressed = false;
+                    is_Pokeball_Button_Pressed = false;
+                    is_Healing_Item_Button_Pressed = false;
+                    is_Run_Button_Pressed = false;
+
+                    AttackPanelLayout.Visible = false; PokeballPanelLayout.Visible = false; healingItemTableLayout.Visible = false;
+                    
+
+                    updateStatusLabels();
+
+                    turnNumber = 1;
                 }
 
-                roundCounter++;
+                else
+                {
+                    roundCounter++; 
+
+                    if (enemyPokemon.Status == "asleep" || enemyPokemon.Status == "frozen")
+                    {
+                        Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and unable to attack!";
+
+                        await Task.Run(() => Delay(4));
+
+                        turnNumber = 0;
+                        continue;
+                    }
+                    if (enemyPokemon.Status == "paralyzed")
+                    {
+                        Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and may be unable to attack!";
+
+                        await Task.Run(() => Delay(4));
+
+                        int testParalysis = rng.Next(0, 3);
+
+                        Debug.WriteLine(testParalysis);
+
+                        if (testParalysis == 0)
+                        {
+                            Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} it can't move!";
+
+                            await Task.Run(() => Delay(4));
+
+                            turnNumber = 0;
+                            continue;
+                        }
+                    }
+
+                    bool[] testedNums = [enemyPokemon.moveSet[0].powerPoints > 0, enemyPokemon.moveSet[1].powerPoints > 0];
+
+                    bool outOfMoves = testedNums.All(var => var == false);
+
+                    bool attackUsed = false;
+
+
+                    if (!outOfMoves)
+                    {
+                        while (!attackUsed)
+                        {
+                            int randAttackNum = rng.Next(0, 2);
+
+                            if (testedNums[randAttackNum] == false)
+                            {
+                                continue;
+                            }
+                            else { Update_Message_Box_Text(enemyPokemon, playerPokemon, Player_Health_Bar, randAttackNum); attackUsed = true; }
+                        }
+                    }
+                    else
+                    {
+                        Message_Box.Text = "The Enemy is out of usable moves! It ran around panicking!";
+                    }
+                
+
+                    await Task.Run(() => Delay(4));
+
+                    turnNumber = 0;
+
+                    updateStatusLabels();
+                }
+
+                
 
                 if (roundCounter == 2) 
                 {
@@ -415,6 +457,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     bool enemyEffect = DoStatusEffect(enemyPokemon, Enemy_Health_Bar, Message_Box);
 
                     if (enemyEffect) { await Task.Run(() => Delay(4)); }
+
+                    updateStatusLabels();
 
                     roundCounter = 0;
                 }
@@ -479,13 +523,33 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 }
                 if (target.Status.ToLower().Equals("poisoned"))
                 {
-                    textBox.Text = $"{target.name} has taken damage do to poison!";
-                    targetHealthBar.Value -= (int)(target.health / 16);
+                    textBox.Text = $"{target.name} has taken damage due to poison!";
+
+                    int poisonDamage = target.health / 16;
+
+                    if (targetHealthBar.Value - poisonDamage < 0)
+                    {
+                        targetHealthBar.Value = 0;
+                    }
+                    else
+                    {
+                        targetHealthBar.Value -= poisonDamage;
+                    }
                 }
                 if (target.Status.ToLower().Equals("burned"))
                 {
-                    textBox.Text = $"{target.name} has taken damage do to burn!";
-                    targetHealthBar.Value -= (int)(target.health / 8);
+                    textBox.Text = $"{target.name} has taken damage due to burn!";
+
+                    int burnDamage = target.health / 8;
+
+                    if (targetHealthBar.Value - burnDamage < 0)
+                    {
+                        targetHealthBar.Value = 0;
+                    }
+                    else
+                    {
+                        targetHealthBar.Value -= burnDamage;
+                    }
                 }
 
                 textChanged = true;
@@ -584,6 +648,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 Enemy_Sprite.Visible = false;
                 pokeballPictureBox.Visible = true;
                 pokeballPictureBox.BackgroundImage = image;
+                Enemy_Health_Bar.Value = 0;
             }
             else
             {
@@ -672,6 +737,49 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             Generic_UseHealingItem_Click(3);
             fullHealButton.Text = $"Full Heal: {inventory[3].Amount}";
+        }
+
+
+        private void updateStatusLabels()
+        {
+            Generic_StatusLabelSet(playerPokemon, Player_StatusLabel);
+            Generic_StatusLabelSet(enemyPokemon, Enemy_StatusLabel);
+        }
+        private static void Generic_StatusLabelSet(Pokemon pokemon, Label statusLabel)
+        {
+            switch (pokemon.Status.ToLower())
+            {
+                case "":
+                    statusLabel.Text = "";
+                    statusLabel.BackColor = Color.White;
+                    statusLabel.Visible = false;
+                    break;
+                case "asleep":
+                    statusLabel.Text = "SLP";
+                    statusLabel.BackColor = Color.LightGray;
+                    statusLabel.Visible = true;
+                    break;
+                case "paralyzed":
+                    statusLabel.Text = "PAR";
+                    statusLabel.BackColor = Color.Gold;
+                    statusLabel.Visible = true;
+                    break;
+                case "frozen":
+                    statusLabel.Text = "FRZ";
+                    statusLabel.BackColor = Color.LightBlue;
+                    statusLabel.Visible = true;
+                    break;
+                case "poisoned":
+                    statusLabel.Text = "PSN";
+                    statusLabel.BackColor = Color.Purple;
+                    statusLabel.Visible = true;
+                    break;
+                case "burned":
+                    statusLabel.Text = "BRN";
+                    statusLabel.BackColor = Color.OrangeRed;
+                    statusLabel.Visible = true;
+                    break;
+            }
         }
     }
 }

@@ -226,4 +226,80 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             return $"{user.name} used sleep attack and put {target.name} to sleep!";
         }
     }
+
+    public class Poison_Breath : Special_Attack
+    {
+        public Poison_Breath() : base(0, 100, "Poison Breath", "Normal", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (powerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "poisoned";
+            powerPoints--;
+
+            return $"{user.name} used poison breath and poisoned {target.name}!";
+        }
+    }
+
+    public class Fire_Breath : Special_Attack
+    {
+        public Fire_Breath() : base(0, 100, "Fire Breath", "Fire", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (powerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "burned";
+            powerPoints--;
+
+            return $"{user.name} used fire breath and burned {target.name}!";
+        }
+    }
+
+    public class Thunder_Wave : Special_Attack
+    {
+        public Thunder_Wave() : base(0, 100, "Thunder Wave", "Normal", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (powerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "paralyzed";
+            powerPoints--;
+
+            return $"{user.name} used thunder wave and paralyzed {target.name}!";
+        }
+    }
+
+    public class Ice_Breath : Special_Attack
+    {
+        public Ice_Breath() : base(0, 100, "Ice Breath", "Water", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (powerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "frozen";
+            powerPoints--;
+
+            return $"{user.name} used ice breath and froze {target.name}!";
+        }
+    }
 }

@@ -61,6 +61,8 @@
             fullHealButton = new System.Windows.Forms.Button();
             superPotionButton = new System.Windows.Forms.Button();
             hyperPotionButton = new System.Windows.Forms.Button();
+            Enemy_StatusLabel = new System.Windows.Forms.Label();
+            Player_StatusLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)Enemy_Sprite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player_Sprite).BeginInit();
             OptionPanelLayout.SuspendLayout();
@@ -270,6 +272,7 @@
             // 
             // Attack_Button_1
             // 
+            Attack_Button_1.ForeColor = System.Drawing.Color.White;
             Attack_Button_1.Location = new System.Drawing.Point(4, 5);
             Attack_Button_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Attack_Button_1.Name = "Attack_Button_1";
@@ -281,6 +284,7 @@
             // 
             // Attack_Button_2
             // 
+            Attack_Button_2.ForeColor = System.Drawing.Color.White;
             Attack_Button_2.Location = new System.Drawing.Point(169, 5);
             Attack_Button_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Attack_Button_2.Name = "Attack_Button_2";
@@ -357,7 +361,7 @@
             PokeballPanelLayout.Controls.Add(UseMasterBallButton, 1, 1);
             PokeballPanelLayout.Controls.Add(UseGreatBallButton, 1, 0);
             PokeballPanelLayout.Controls.Add(UseUltraBallButton, 0, 1);
-            PokeballPanelLayout.Location = new System.Drawing.Point(373, 425);
+            PokeballPanelLayout.Location = new System.Drawing.Point(370, 421);
             PokeballPanelLayout.Name = "PokeballPanelLayout";
             PokeballPanelLayout.RowCount = 2;
             PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -436,6 +440,24 @@
             hyperPotionButton.UseVisualStyleBackColor = true;
             hyperPotionButton.Click += hyperPotionButton_Click;
             // 
+            // Enemy_StatusLabel
+            // 
+            Enemy_StatusLabel.ForeColor = System.Drawing.Color.White;
+            Enemy_StatusLabel.Location = new System.Drawing.Point(238, 71);
+            Enemy_StatusLabel.Name = "Enemy_StatusLabel";
+            Enemy_StatusLabel.Size = new System.Drawing.Size(50, 24);
+            Enemy_StatusLabel.TabIndex = 24;
+            Enemy_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Player_StatusLabel
+            // 
+            Player_StatusLabel.ForeColor = System.Drawing.Color.White;
+            Player_StatusLabel.Location = new System.Drawing.Point(656, 333);
+            Player_StatusLabel.Name = "Player_StatusLabel";
+            Player_StatusLabel.Size = new System.Drawing.Size(50, 24);
+            Player_StatusLabel.TabIndex = 25;
+            Player_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // Battle_Screen
             // 
             AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -443,6 +465,8 @@
             BackgroundImage = Properties.Resources.battle_screen;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             ClientSize = new System.Drawing.Size(715, 587);
+            Controls.Add(Player_StatusLabel);
+            Controls.Add(Enemy_StatusLabel);
             Controls.Add(healingItemTableLayout);
             Controls.Add(pokeballPictureBox);
             Controls.Add(PokeballPanelLayout);
@@ -509,5 +533,7 @@
         private System.Windows.Forms.Button fullHealButton;
         private System.Windows.Forms.Button superPotionButton;
         private System.Windows.Forms.Button hyperPotionButton;
+        private System.Windows.Forms.Label Enemy_StatusLabel;
+        private System.Windows.Forms.Label Player_StatusLabel;
     }
 }

@@ -152,6 +152,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string UseItem(Pokemon user)
         {
             user.Status = "";
+            Amount--;
             return $"You used {Name}. Your {user.name} is no longer suffering from any status effects.";
         }
 

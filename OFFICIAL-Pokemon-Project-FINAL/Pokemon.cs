@@ -76,27 +76,27 @@ namespace OFFICIAL_Pokemon_Project_FINAL
     public class Charmander : Pokemon
     {
 
-        public Charmander() : base("Charmander", Resources.charmander, Resources.charmander_back, "Fire", 5)
+        public Charmander() : base("Charmander", Resources.charmander, Resources.charmander_back, "Fire", 50)
         {
-            moveSet = [new Tackle_Attack(), new Ember_Attack()];
+            moveSet = [new Fire_Breath(), new Ember_Attack()];
         }
     }
 
     public class Squirtle : Pokemon
     {
 
-        public Squirtle() : base("Squirtle", Resources.squirtle, Resources.squirtle_back, "Water", 5)
+        public Squirtle() : base("Squirtle", Resources.squirtle, Resources.squirtle_back, "Water", 50)
         {
-            moveSet = [new Tackle_Attack(), new Bubble_Attack()];
+            moveSet = [new Ice_Breath(), new Bubble_Attack()];
         }
     }
 
     public class Bulbasaur : Pokemon
     {
 
-        public Bulbasaur() : base("Bulbasaur", Resources.bulbasaur, Resources.bulbasaur_back, "Grass", 5)
+        public Bulbasaur() : base("Bulbasaur", Resources.bulbasaur, Resources.bulbasaur_back, "Grass", 50)
         {
-            moveSet = [new Sleep_Attack(), new Vine_Whip_Attack()];
+            moveSet = [new Poison_Breath(), new Vine_Whip_Attack()];
         }
     }
 }
