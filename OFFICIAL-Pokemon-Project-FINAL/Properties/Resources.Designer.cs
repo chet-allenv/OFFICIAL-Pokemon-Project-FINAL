@@ -63,6 +63,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Attack_Button {
+            get {
+                object obj = ResourceManager.GetObject("Attack_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap battle_screen {
             get {
                 object obj = ResourceManager.GetObject("battle_screen", resourceCulture);
@@ -93,6 +103,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Catch_Button {
+            get {
+                object obj = ResourceManager.GetObject("Catch_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap charmander {
             get {
                 object obj = ResourceManager.GetObject("charmander", resourceCulture);
@@ -116,6 +136,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap greatball {
             get {
                 object obj = ResourceManager.GetObject("greatball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Heal_Button {
+            get {
+                object obj = ResourceManager.GetObject("Heal_Button", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -163,6 +193,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap Run_Button {
+            get {
+                object obj = ResourceManager.GetObject("Run_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap squirtle {
             get {
                 object obj = ResourceManager.GetObject("squirtle", resourceCulture);
@@ -176,6 +216,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap squirtle_back {
             get {
                 object obj = ResourceManager.GetObject("squirtle_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap Title_Screen {
+            get {
+                object obj = ResourceManager.GetObject("Title_Screen", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

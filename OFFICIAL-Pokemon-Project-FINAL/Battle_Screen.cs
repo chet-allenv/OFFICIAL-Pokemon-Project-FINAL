@@ -122,15 +122,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             RunGame();
         }
 
-        public async void Test_Sleep_Method()
-        {
-            Message_Box.Text = "Im going to sleep";
-
-            await Task.Run(() => Delay(5));
-
-            Message_Box.Text = "I'm awake!";
-        }
-
         private Pokemon Pick_Pokemon()
         {
 
@@ -159,32 +150,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             var newBattleScreen = new Battle_Screen();
 
             newBattleScreen.Show();
-        }
-
-        private void Damage_Button_Click(object sender, EventArgs e)
-        {
-            if (Enemy_Health_Bar.Value > 10)
-            {
-                Enemy_Health_Bar.Value -= 10;
-            }
-
-            else
-            {
-                Enemy_Health_Bar.Value = 0;
-            }
-        }
-
-        private void Heal_Button_Click(object sender, EventArgs e)
-        {
-            if (Enemy_Health_Bar.Value + 10 > Enemy_Health_Bar.Maximum)
-            {
-                Enemy_Health_Bar.Value = Enemy_Health_Bar.Maximum;
-            }
-
-            else
-            {
-                Enemy_Health_Bar.Value += 10;
-            }
         }
 
         private Color Decide_Type_Color(string type)
@@ -252,11 +217,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             Message_Box.Text = message;
             ShowAttackBox.Visible = true;
-        }
-
-        private void Sleep_Test_Button_Click(object sender, EventArgs e)
-        {
-            Test_Sleep_Method();
         }
 
         public void SetStartingTurnNumber()
