@@ -11,7 +11,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 {
     public class Attack
     {
-
+        // hii
         public int basePower { get; set; }
         public int accuracy { get; set; }
         public string name { get; set; }
