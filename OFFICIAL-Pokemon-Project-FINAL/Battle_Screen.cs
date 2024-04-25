@@ -42,19 +42,19 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             InitializeComponent();
 
-            enemyPokemon = Pick_Pokemon();
-            playerPokemon = Pick_Pokemon();
+            enemyPokemon = new Wattrus();
+            playerPokemon = new Wattrus();
 
-            Enemy_Health_Bar.Maximum = enemyPokemon.health;
-            Enemy_Health_Bar.Value = enemyPokemon.health;
+            Enemy_Health_Bar.Maximum = enemyPokemon.Health;
+            Enemy_Health_Bar.Value = enemyPokemon.Health;
 
-            Player_Health_Bar.Maximum = playerPokemon.health;
-            Player_Health_Bar.Value = playerPokemon.health;
+            Player_Health_Bar.Maximum = playerPokemon.Health;
+            Player_Health_Bar.Value = playerPokemon.Health;
 
             updateStatusLabels();
 
             Debug.WriteLine(Enemy_Health_Bar.Value);
-            Debug.WriteLine(enemyPokemon.health);
+            Debug.WriteLine(enemyPokemon.Health);
         }
 
         private void Update(object sender, EventArgs e)
@@ -62,13 +62,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             if (!enemyPokemon.Is_Alive())
             {
                 Enemy_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Enemy {enemyPokemon.name} has died";
+                Message_Box.Text = $"Enemy {enemyPokemon.Name} has died";
             }
 
             else if (!playerPokemon.Is_Alive())
             {
                 Player_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Your {playerPokemon.name} has died";
+                Message_Box.Text = $"Your {playerPokemon.Name} has died";
             }
         }
 
@@ -95,14 +95,20 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Enemy_Sprite.BackgroundImage = enemyPokemon.Get_Front_Sprite();
             Player_Sprite.BackgroundImage = playerPokemon.Get_Back_Sprite();
 
-            Enemy_Name.Text = enemyPokemon.name;
-            Player_Name.Text = playerPokemon.name;
+            Enemy_Name.Text = enemyPokemon.Name;
+            Player_Name.Text = playerPokemon.Name;
 
-            Attack_Button_1.Text = $"{playerPokemon.moveSet[0].name}\nPP:{playerPokemon.moveSet[0].powerPoints}";
-            Attack_Button_1.BackColor = Decide_Type_Color(playerPokemon.moveSet[0].moveType);
+            Attack_Button_1.Text = $"{playerPokemon.moveSet[0].Name}\nPP:{playerPokemon.moveSet[0].PowerPoints}";
+            Attack_Button_1.BackColor = Decide_Type_Color(playerPokemon.moveSet[0].MoveType);
 
-            Attack_Button_2.Text = $"{playerPokemon.moveSet[1].name}\nPP:{playerPokemon.moveSet[1].powerPoints}";
-            Attack_Button_2.BackColor = Decide_Type_Color(playerPokemon.moveSet[1].moveType);
+            Attack_Button_2.Text = $"{playerPokemon.moveSet[1].Name}\nPP:{playerPokemon.moveSet[1].PowerPoints}";
+            Attack_Button_2.BackColor = Decide_Type_Color(playerPokemon.moveSet[1].MoveType);
+
+            Attack_Button_3.Text = $"{playerPokemon.moveSet[2].Name}\nPP:{playerPokemon.moveSet[2].PowerPoints}";
+            Attack_Button_3.BackColor = Decide_Type_Color(playerPokemon.moveSet[2].MoveType);
+
+            Attack_Button_4.Text = $"{playerPokemon.moveSet[3].Name}\nPP:{playerPokemon.moveSet[3].PowerPoints}";
+            Attack_Button_4.BackColor = Decide_Type_Color(playerPokemon.moveSet[3].MoveType);
 
             UsePokeballButton.Text = $"Pokeball: {pokeballs[0].Amount}";
             UseGreatBallButton.Text = $"GreatBall: {pokeballs[1].Amount}";
@@ -137,11 +143,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             switch (rng.Next(3))
             {
                 case 0:
-                    return new Bulbasaur();
+                    return new Wattrus();
                 case 1:
-                    return new Charmander();
+                    return new Nautighoul();
                 case 2:
-                    return new Squirtle();
+                    return new Chainsprout();
             }
 
             return null;
@@ -192,19 +198,54 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             if (type.Equals("Fire"))
             {
-                return Color.Red;
+                return Color.OrangeRed;
             }
 
             else if (type.Equals("Water"))
             {
-                return Color.Blue;
+                return Color.DodgerBlue;
             }
 
             else if (type.Equals("Grass"))
             {
-                return Color.Green;
+                return Color.LimeGreen;
             }
-
+            else if (type.Equals("Electric"))
+            {
+                return Color.Gold;
+            }
+            else if (type.Equals("Steel"))
+            {
+                return Color.LightSteelBlue;
+            }
+            else if (type.Equals("Ice"))
+            {
+                return Color.LightBlue;
+            }
+            else if (type.Equals("Ghost"))
+            {
+                return Color.MediumSlateBlue;
+            }
+            else if (type.Equals("Dragon"))
+            {
+                return Color.DarkSlateGray;
+            }
+            else if (type.Equals("Psychic"))
+            {
+                return Color.Orchid;
+            }
+            else if (type.Equals("Flying"))
+            {
+                return Color.SkyBlue;
+            }
+            else if (type.Equals("Bug"))
+            {
+                return Color.YellowGreen;
+            }
+            else if (type.Equals("Rock"))
+            {
+                return Color.Peru;
+            }
             else if (type.Equals("Normal"))
             {
                 return Color.Gray;
@@ -223,7 +264,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             is_Attack_Button_Pressed = true;
 
             Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 0);
-            Attack_Button_1.Text = $"{playerPokemon.moveSet[0].name}\nPP:{playerPokemon.moveSet[0].powerPoints}";
+            Attack_Button_1.Text = $"{playerPokemon.moveSet[0].Name}\nPP:{playerPokemon.moveSet[0].PowerPoints}";
 
             AttackPanelLayout.Visible = false;
 
@@ -239,10 +280,42 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             is_Attack_Button_Pressed = true;
 
             Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 1);
-            Attack_Button_2.Text = $"{playerPokemon.moveSet[1].name}\nPP:{playerPokemon.moveSet[1].powerPoints}";
+            Attack_Button_2.Text = $"{playerPokemon.moveSet[1].Name}\nPP:{playerPokemon.moveSet[1].PowerPoints}";
 
             AttackPanelLayout.Visible = false;
         }
+
+        private void Attack_Button_3_Click(object sender, EventArgs e)
+        {
+            if (!is_Player_Turn)
+            {
+                return;
+            }
+
+            is_Attack_Button_Pressed = true;
+
+            Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 2);
+            Attack_Button_3.Text = $"{playerPokemon.moveSet[2].Name}\nPP:{playerPokemon.moveSet[2].PowerPoints}";
+
+            AttackPanelLayout.Visible = false;
+        }
+
+        private void Attack_Button_4_Click(object sender, EventArgs e)
+        {
+            if (!is_Player_Turn)
+            {
+                return;
+            }
+
+            is_Attack_Button_Pressed = true;
+
+            Update_Message_Box_Text(playerPokemon, enemyPokemon, Enemy_Health_Bar, 3);
+            Attack_Button_4.Text = $"{playerPokemon.moveSet[3].Name}\nPP:{playerPokemon.moveSet[3].PowerPoints}";
+
+            AttackPanelLayout.Visible = false;
+        }
+
+        
 
         private void Update_Message_Box_Text(Pokemon user, Pokemon target, ProgressBar targetHealthBar, int attackNumber)
         {
@@ -262,18 +335,18 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public void SetStartingTurnNumber()
         {
 
-            Debug.WriteLine($"Player speed {playerPokemon.speed}");
-            Debug.WriteLine($"Enemy speed {enemyPokemon.speed}");
+            Debug.WriteLine($"Player speed {playerPokemon.Speed}");
+            Debug.WriteLine($"Enemy speed {enemyPokemon.Speed}");
 
-            switch (playerPokemon.speed >= enemyPokemon.speed)
+            switch (playerPokemon.Speed >= enemyPokemon.Speed)
             {
                 case true:
                     turnNumber = 0;
-                    Message_Box.Text = $"Your {playerPokemon.name} is faster than the enemy {enemyPokemon.name}. You get to go first!";
+                    Message_Box.Text = $"Your {playerPokemon.Name} is faster than the enemy {enemyPokemon.Name}. You get to go first!";
                     break;
                 case false:
                     turnNumber = 1;
-                    Message_Box.Text = $"The enemy {enemyPokemon.name} is faster than your {playerPokemon.name}. The enemy will go first!";
+                    Message_Box.Text = $"The enemy {enemyPokemon.Name} is faster than your {playerPokemon.Name}. The enemy will go first!";
                     break;
             }
         }
@@ -316,7 +389,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                     if (playerPokemon.Status == "asleep" || playerPokemon.Status == "frozen")
                     {
-                        Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} and unable to attack!";
+                        Message_Box.Text = $"Your {playerPokemon.Name} is {playerPokemon.Status} and unable to attack!";
 
                         await Task.Run(() => Delay(4));
 
@@ -324,7 +397,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     }
                     if (playerPokemon.Status == "paralyzed")
                     {
-                        Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} and may be unable to attack!";
+                        Message_Box.Text = $"Your {playerPokemon.Name} is {playerPokemon.Status} and may be unable to attack!";
 
                         await Task.Run(() => Delay(4));
 
@@ -334,14 +407,14 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                         if (testParalysis == 0)
                         {
-                            Message_Box.Text = $"Your {playerPokemon.name} is {playerPokemon.Status} it can't move!";
+                            Message_Box.Text = $"Your {playerPokemon.Name} is {playerPokemon.Status} it can't move!";
 
                             await Task.Run(() => Delay(4));
 
                             canAttack = false;
                         }
                     }
-                    
+
                     Message_Box.Text = "It's your turn, press the button of the option you would like to do!";
 
                     is_Player_Turn = true;
@@ -372,7 +445,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     is_Run_Button_Pressed = false;
 
                     AttackPanelLayout.Visible = false; PokeballPanelLayout.Visible = false; healingItemTableLayout.Visible = false;
-                    
+
 
                     updateStatusLabels();
 
@@ -381,11 +454,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                 else
                 {
-                    roundCounter++; 
+                    roundCounter++;
 
                     if (enemyPokemon.Status == "asleep" || enemyPokemon.Status == "frozen")
                     {
-                        Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and unable to attack!";
+                        Message_Box.Text = $"Enemy {enemyPokemon.Name} is {enemyPokemon.Status} and unable to attack!";
 
                         await Task.Run(() => Delay(4));
 
@@ -394,7 +467,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     }
                     if (enemyPokemon.Status == "paralyzed")
                     {
-                        Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} and may be unable to attack!";
+                        Message_Box.Text = $"Enemy {enemyPokemon.Name} is {enemyPokemon.Status} and may be unable to attack!";
 
                         await Task.Run(() => Delay(4));
 
@@ -404,7 +477,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                         if (testParalysis == 0)
                         {
-                            Message_Box.Text = $"Enemy {enemyPokemon.name} is {enemyPokemon.Status} it can't move!";
+                            Message_Box.Text = $"Enemy {enemyPokemon.Name} is {enemyPokemon.Status} it can't move!";
 
                             await Task.Run(() => Delay(4));
 
@@ -413,7 +486,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                         }
                     }
 
-                    bool[] testedNums = [enemyPokemon.moveSet[0].powerPoints > 0, enemyPokemon.moveSet[1].powerPoints > 0];
+                    bool[] testedNums = [enemyPokemon.moveSet[0].PowerPoints > 0, enemyPokemon.moveSet[1].PowerPoints > 0];
 
                     bool outOfMoves = testedNums.All(var => var == false);
 
@@ -437,7 +510,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     {
                         Message_Box.Text = "The Enemy is out of usable moves! It ran around panicking!";
                     }
-                
+
 
                     await Task.Run(() => Delay(4));
 
@@ -446,9 +519,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     updateStatusLabels();
                 }
 
-                
 
-                if (roundCounter == 2) 
+
+                if (roundCounter == 2)
                 {
                     bool playerEffect = DoStatusEffect(playerPokemon, Player_Health_Bar, Message_Box);
 
@@ -468,7 +541,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             {
                 Player_Sprite.BackgroundImage = null;
 
-                Message_Box.Text = $"Your {playerPokemon.name} fainted. YOU LOSE.";
+                Message_Box.Text = $"Your {playerPokemon.Name} fainted. YOU LOSE.";
 
                 await Task.Run(() => Delay(4));
 
@@ -479,7 +552,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             {
                 Enemy_Sprite.BackgroundImage = null;
 
-                Message_Box.Text = $"Enemy {enemyPokemon.name} fainted. YOU WIN.";
+                Message_Box.Text = $"Enemy {enemyPokemon.Name} fainted. YOU WIN.";
 
                 await Task.Run(() => Delay(4));
 
@@ -507,7 +580,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                     if (testAwake == 0)
                     {
-                        textBox.Text = $"{target.name} has woken up!";
+                        textBox.Text = $"{target.Name} has woken up!";
                         target.Status = "";
                     }
                 }
@@ -517,15 +590,15 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
                     if (testFrozen == 0)
                     {
-                        textBox.Text = $"{target.name} has thawed out!";
+                        textBox.Text = $"{target.Name} has thawed out!";
                         target.Status = "";
                     }
                 }
                 if (target.Status.ToLower().Equals("poisoned"))
                 {
-                    textBox.Text = $"{target.name} has taken damage due to poison!";
+                    textBox.Text = $"{target.Name} has taken damage due to poison!";
 
-                    int poisonDamage = target.health / 16;
+                    int poisonDamage = target.Health / 16;
 
                     if (targetHealthBar.Value - poisonDamage < 0)
                     {
@@ -538,9 +611,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 }
                 if (target.Status.ToLower().Equals("burned"))
                 {
-                    textBox.Text = $"{target.name} has taken damage due to burn!";
+                    textBox.Text = $"{target.Name} has taken damage due to burn!";
 
-                    int burnDamage = target.health / 8;
+                    int burnDamage = target.Health / 8;
 
                     if (targetHealthBar.Value - burnDamage < 0)
                     {
@@ -615,10 +688,10 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
 
             // Checks if enemy speed divided by 4 and the mod by 256 is equal to zero to avoid a dividing by zero error and returns 256
-            if (enemyPokemon.speed / 4 % 256 == 0) { return 256; }
+            if (enemyPokemon.Speed / 4 % 256 == 0) { return 256; }
 
             // Calculates the odds to escape using the formula
-            int oddsToEscape = (playerPokemon.speed * 32 / (enemyPokemon.speed / 4 % 256)) + 30;
+            int oddsToEscape = (playerPokemon.Speed * 32 / (enemyPokemon.Speed / 4 % 256)) + 30;
 
             // Returns the oddsToEscape
             return oddsToEscape;
@@ -644,7 +717,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             if (CatchPokemon(invNumber))
             {
-                Message_Box.Text = $"You caught the {enemyPokemon.name} using a {pokeballs[invNumber].Name}!";
+                Message_Box.Text = $"You caught the {enemyPokemon.Name} using a {pokeballs[invNumber].Name}!";
                 Enemy_Sprite.Visible = false;
                 pokeballPictureBox.Visible = true;
                 pokeballPictureBox.BackgroundImage = image;
@@ -652,7 +725,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             }
             else
             {
-                Message_Box.Text = $"You failed to catch the {enemyPokemon.name}";
+                Message_Box.Text = $"You failed to catch the {enemyPokemon.Name}";
             }
 
             PokeballPanelLayout.Visible = false;
@@ -703,7 +776,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 {
                     Message_Box.Text = inventory[3].UseItem(playerPokemon);
                 }
-                else 
+                else
                 {
                     Message_Box.Text = inventory[invNumber].UseItem(Player_Health_Bar);
                 }
@@ -781,5 +854,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     break;
             }
         }
+
     }
 }

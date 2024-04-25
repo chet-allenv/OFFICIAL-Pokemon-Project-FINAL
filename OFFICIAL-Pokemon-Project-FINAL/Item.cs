@@ -59,7 +59,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public virtual double Use(Pokemon target, ProgressBar targetHealthBar)
         {
-            double calculatedResult = (((3 * target.health) - (2 * targetHealthBar.Value)) * 128 * CatchRate / (3 * target.health))  * GetStatusCatchAffect(target);
+            double calculatedResult = (((3 * target.Health) - (2 * targetHealthBar.Value)) * 128 * CatchRate / (3 * target.Health))  * GetStatusCatchAffect(target);
             Debug.WriteLine(calculatedResult);
             return calculatedResult;
         }
@@ -153,7 +153,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             user.Status = "";
             Amount--;
-            return $"You used {Name}. Your {user.name} is no longer suffering from any status effects.";
+            return $"You used {Name}. Your {user.Name} is no longer suffering from any status effects.";
         }
 
     }

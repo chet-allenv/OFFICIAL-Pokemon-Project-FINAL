@@ -63,6 +63,8 @@
             hyperPotionButton = new System.Windows.Forms.Button();
             Enemy_StatusLabel = new System.Windows.Forms.Label();
             Player_StatusLabel = new System.Windows.Forms.Label();
+            Attack_Button_3 = new System.Windows.Forms.Button();
+            Attack_Button_4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)Enemy_Sprite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player_Sprite).BeginInit();
             OptionPanelLayout.SuspendLayout();
@@ -300,6 +302,8 @@
             AttackPanelLayout.ColumnCount = 2;
             AttackPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
             AttackPanelLayout.ColumnStyles.Add(new System.Windows.Forms.ColumnStyle(System.Windows.Forms.SizeType.Percent, 50F));
+            AttackPanelLayout.Controls.Add(Attack_Button_4, 1, 1);
+            AttackPanelLayout.Controls.Add(Attack_Button_3, 0, 1);
             AttackPanelLayout.Controls.Add(Attack_Button_1, 0, 0);
             AttackPanelLayout.Controls.Add(Attack_Button_2, 1, 0);
             AttackPanelLayout.Location = new System.Drawing.Point(373, 428);
@@ -361,7 +365,7 @@
             PokeballPanelLayout.Controls.Add(UseMasterBallButton, 1, 1);
             PokeballPanelLayout.Controls.Add(UseGreatBallButton, 1, 0);
             PokeballPanelLayout.Controls.Add(UseUltraBallButton, 0, 1);
-            PokeballPanelLayout.Location = new System.Drawing.Point(370, 421);
+            PokeballPanelLayout.Location = new System.Drawing.Point(123, 178);
             PokeballPanelLayout.Name = "PokeballPanelLayout";
             PokeballPanelLayout.RowCount = 2;
             PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -391,7 +395,7 @@
             healingItemTableLayout.Controls.Add(fullHealButton, 1, 1);
             healingItemTableLayout.Controls.Add(superPotionButton, 1, 0);
             healingItemTableLayout.Controls.Add(hyperPotionButton, 0, 1);
-            healingItemTableLayout.Location = new System.Drawing.Point(370, 424);
+            healingItemTableLayout.Location = new System.Drawing.Point(293, 131);
             healingItemTableLayout.Name = "healingItemTableLayout";
             healingItemTableLayout.RowCount = 2;
             healingItemTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
@@ -457,6 +461,30 @@
             Player_StatusLabel.Size = new System.Drawing.Size(50, 24);
             Player_StatusLabel.TabIndex = 25;
             Player_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // Attack_Button_3
+            // 
+            Attack_Button_3.ForeColor = System.Drawing.Color.White;
+            Attack_Button_3.Location = new System.Drawing.Point(4, 77);
+            Attack_Button_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_3.Name = "Attack_Button_3";
+            Attack_Button_3.Size = new System.Drawing.Size(157, 62);
+            Attack_Button_3.TabIndex = 11;
+            Attack_Button_3.Text = "Attack 3";
+            Attack_Button_3.UseVisualStyleBackColor = true;
+            Attack_Button_3.Click += Attack_Button_3_Click;
+            // 
+            // Attack_Button_4
+            // 
+            Attack_Button_4.ForeColor = System.Drawing.Color.White;
+            Attack_Button_4.Location = new System.Drawing.Point(169, 77);
+            Attack_Button_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            Attack_Button_4.Name = "Attack_Button_4";
+            Attack_Button_4.Size = new System.Drawing.Size(157, 62);
+            Attack_Button_4.TabIndex = 12;
+            Attack_Button_4.Text = "Attack 4";
+            Attack_Button_4.UseVisualStyleBackColor = true;
+            Attack_Button_4.Click += Attack_Button_4_Click;
             // 
             // Battle_Screen
             // 
@@ -535,5 +563,7 @@
         private System.Windows.Forms.Button hyperPotionButton;
         private System.Windows.Forms.Label Enemy_StatusLabel;
         private System.Windows.Forms.Label Player_StatusLabel;
+        private System.Windows.Forms.Button Attack_Button_4;
+        private System.Windows.Forms.Button Attack_Button_3;
     }
 }

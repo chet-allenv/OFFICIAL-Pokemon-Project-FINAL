@@ -12,11 +12,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
     public class Attack
     {
 
-        public int basePower { get; set; }
-        public int accuracy { get; set; }
-        public string name { get; set; }
-        public string moveType { get; set; }
-        public int powerPoints { get; set; }
+        public int BasePower { get; set; }
+        public int Accuracy { get; set; }
+        public string Name { get; set; }
+        public string MoveType { get; set; }
+        public int PowerPoints { get; set; }
 
         
         public readonly PokemonType pt = new();
@@ -24,11 +24,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public Attack(int basePower, int accuracy, string name, string moveType, int powerPoints)
         {
-            this.basePower = basePower;
-            this.accuracy = accuracy;
-            this.name = name;
-            this.moveType = moveType;
-            this.powerPoints = powerPoints;
+            this.BasePower = basePower;
+            this.Accuracy = accuracy;
+            this.Name = name;
+            this.MoveType = moveType;
+            this.PowerPoints = powerPoints;
 
             pt.Initialize_Type_Matchup();
         }
@@ -40,26 +40,40 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         public string Get_Used_Attack_Message(Pokemon pokemon)
         {
-            return $"{pokemon.name} used {this.name}";
+            return $"{pokemon.Name} used {this.Name}";
         }
 
         public (double effectiveness, string message) Calculate_Type_Effectiveness(Pokemon target)
         {
             string message = "";
 
-            pt.Weakness_Dictionary.TryGetValue(target.type, out List<string> Target_Weaknesses);
-            pt.Strength_Dictionary.TryGetValue(target.type, out List<string> Target_Strengths);
+            pt.Weakness_Dictionary.TryGetValue(target.Type1, out List<string> Target_Weaknesses_Type1);
+            pt.Strength_Dictionary.TryGetValue(target.Type1, out List<string> Target_Strengths_Type1);
 
-            Target_Weaknesses ??= [];
-            Target_Strengths ??= [];
+            pt.Weakness_Dictionary.TryGetValue(target.Type2, out List<string> Target_Weaknesses_Type2);
+            pt.Strength_Dictionary.TryGetValue(target.Type2, out List<string> Target_Strengths_Type2);
+
+            Target_Weaknesses_Type1 ??= [];
+            Target_Strengths_Type1 ??= [];
+
+            Target_Weaknesses_Type2 ??= [];
+            Target_Strengths_Type2 ??= [];
 
             double effectiveness = 1.0;
 
-            if (Target_Strengths.Contains(moveType))
+            if (Target_Strengths_Type1.Contains(MoveType))
             {
                 effectiveness *= 0.5;
             }
-            if (Target_Weaknesses.Contains(moveType))
+            if (Target_Weaknesses_Type1.Contains(MoveType))
+            {
+                effectiveness *= 2;
+            }
+            if (Target_Strengths_Type2.Contains(MoveType))
+            {
+                effectiveness *= 0.5;
+            }
+            if (Target_Weaknesses_Type2.Contains(MoveType))
             {
                 effectiveness *= 2;
             }
@@ -85,16 +99,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             string message = "";
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             int testAccuracy = rng.Next(0, 101);
 
-            if (testAccuracy <= accuracy)
+            if (testAccuracy <= Accuracy)
             {
-                double STAB = moveType.Equals(user.type) ? 1.5 : 1.0;
+                double STAB = MoveType.Equals(user.Type1) || MoveType.Equals(user.Type2) ? 1.5 : 1.0;
 
                 double typeEffectiveness = Calculate_Type_Effectiveness(target).effectiveness;
 
@@ -111,9 +125,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 }
             }
 
-            powerPoints -= 1;
+            PowerPoints -= 1;
 
-            message = testAccuracy <= accuracy ? $"{user.name} used {this.name}" : $"Attack missed\n{user.name} used {this.name}";
+            message = testAccuracy <= Accuracy ? $"{user.Name} used {this.Name}" : $"Attack missed\n{user.Name} used {this.Name}";
 
             return message;
         }
@@ -123,7 +137,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             int randomNumber = rng.Next(217, 256);
 
-            double damage_DOUBLE = ((2 * user.level / 5 + 2) * user.attack * basePower / target.defense / 50 + 2) * STAB * typeEffectiveness * randomNumber / 100;
+            double damage_DOUBLE = ((2 * user.Level / 5 + 2) * user.Attack * BasePower / target.Defense / 50 + 2) * STAB * typeEffectiveness * randomNumber / 100;
             int damage = (int)damage_DOUBLE;
 
             return damage;
@@ -138,16 +152,16 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             string message = "";
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             int testAccuracy = rng.Next(0, 101);
 
-            if (testAccuracy <= accuracy)
+            if (testAccuracy <= Accuracy)
             {
-                double STAB = moveType.Equals(user.type) ? 1.5 : 1.0;
+                double STAB = MoveType.Equals(user.Type1) || MoveType.Equals(user.Type2) ? 1.5 : 1.0;
 
                 double typeEffectiveness = Calculate_Type_Effectiveness(target).effectiveness;
 
@@ -165,9 +179,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 }
             }
 
-            powerPoints -= 1;
+            PowerPoints -= 1;
 
-            message = testAccuracy <= accuracy ? $"{user.name} used {this.name}" : $"Attack missed\n{user.name} used {this.name}";
+            message = testAccuracy <= Accuracy ? $"{user.Name} used {this.Name}" : $"Attack missed\n{user.Name} used {this.Name}";
 
             return message;
         }
@@ -176,7 +190,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             int randomNumber = rng.Next(217, 256);
 
-            int damage = (int)(((2 * user.level / 5 + 2) * user.attack * basePower / target.defense / 50 + 2) * STAB * typeEffectiveness * randomNumber / 100);
+            int damage = (int)(((2 * user.Level / 5 + 2) * user.Attack * BasePower / target.Defense / 50 + 2) * STAB * typeEffectiveness * randomNumber / 100);
 
             return damage;
         }
@@ -215,15 +229,15 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             target.Status = "asleep";
-            powerPoints--;
+            PowerPoints--;
 
-            return $"{user.name} used sleep attack and put {target.name} to sleep!";
+            return $"{user.Name} used sleep attack and put {target.Name} to sleep!";
         }
     }
 
@@ -234,15 +248,15 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             target.Status = "poisoned";
-            powerPoints--;
+            PowerPoints--;
 
-            return $"{user.name} used poison breath and poisoned {target.name}!";
+            return $"{user.Name} used poison breath and poisoned {target.Name}!";
         }
     }
 
@@ -253,15 +267,15 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             target.Status = "burned";
-            powerPoints--;
+            PowerPoints--;
 
-            return $"{user.name} used fire breath and burned {target.name}!";
+            return $"{user.Name} used fire breath and burned {target.Name}!";
         }
     }
 
@@ -272,34 +286,83 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
 
-            if (powerPoints <= 0)
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
             target.Status = "paralyzed";
-            powerPoints--;
+            PowerPoints--;
 
-            return $"{user.name} used thunder wave and paralyzed {target.name}!";
+            return $"{user.Name} used thunder wave and paralyzed {target.Name}!";
         }
     }
 
     public class Ice_Breath : Special_Attack
     {
-        public Ice_Breath() : base(0, 100, "Ice Breath", "Water", 10) { }
+        public Ice_Breath() : base(0, 25, "Ice Breath", "Ice", 10) { }
 
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
+            int num = rng.Next(0, 4);
 
-            if (powerPoints <= 0)
+
+            if (PowerPoints <= 0)
             {
                 return "Unable to use attack. You are out of PP!";
             }
 
-            target.Status = "frozen";
-            powerPoints--;
+            PowerPoints--;
 
-            return $"{user.name} used ice breath and froze {target.name}!";
+            if (num == 0)
+            {
+                target.Status = "frozen";
+                return $"{user.Name} used ice breath and froze {target.Name}!";
+            }
+            else
+            {
+                return "Attack missed";
+            }
         }
     }
+
+    public class Thunderbolt : Special_Attack
+    {
+        public Thunderbolt() : base(90, 100, "Thunderbolt", "Electric", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            int num = rng.Next(0, 10);
+            string message = "";
+
+
+            if (num == 0)
+            {
+                target.Status = "Paralyzed";
+                message = $"{target.Name} was paralyzed";
+            }
+
+            return message + base.Use(user, target, targetHealthBar);
+        }
+    }
+    public class Ice_Beam : Special_Attack
+    {
+        public Ice_Beam() : base(90, 100, "Ice Beam", "Ice", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            int num = rng.Next(0, 10);
+            string message = "";
+
+
+            if (num == 0)
+            {
+                target.Status = "Frozen";
+                message = $"{target.Name} was Frozen";
+            }
+
+            return message + base.Use(user, target, targetHealthBar);
+        }
+    }
+
 }

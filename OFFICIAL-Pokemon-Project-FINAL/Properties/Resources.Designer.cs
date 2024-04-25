@@ -93,6 +93,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap chainsprout_back {
+            get {
+                object obj = ResourceManager.GetObject("chainsprout_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap chainsprout_front {
+            get {
+                object obj = ResourceManager.GetObject("chainsprout_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap chainsprout_sprite {
+            get {
+                object obj = ResourceManager.GetObject("chainsprout_sprite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap charmander {
             get {
                 object obj = ResourceManager.GetObject("charmander", resourceCulture);
@@ -126,6 +156,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap masterball {
             get {
                 object obj = ResourceManager.GetObject("masterball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap naughtighoul_back {
+            get {
+                object obj = ResourceManager.GetObject("naughtighoul_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap naughtighoul_front {
+            get {
+                object obj = ResourceManager.GetObject("naughtighoul_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap nautighoul_sprite {
+            get {
+                object obj = ResourceManager.GetObject("nautighoul_sprite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -186,6 +246,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap ultraball {
             get {
                 object obj = ResourceManager.GetObject("ultraball", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap wattrus_back {
+            get {
+                object obj = ResourceManager.GetObject("wattrus_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap wattrus_front {
+            get {
+                object obj = ResourceManager.GetObject("wattrus_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap wattrus_sprite {
+            get {
+                object obj = ResourceManager.GetObject("wattrus_sprite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

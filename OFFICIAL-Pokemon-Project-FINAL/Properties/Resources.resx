@@ -127,6 +127,15 @@
   <data name="bulbasaur_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\bulbasaur_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="chainsprout_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chainsprout_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chainsprout_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chainsprout_front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="chainsprout_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\chainsprout_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="charmander" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\charmander.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -138,6 +147,15 @@
   </data>
   <data name="masterball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Masterball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naughtighoul_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naughtighoul_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="naughtighoul_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\naughtighoul_front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="nautighoul_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nautighoul_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="play_button" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\play_button.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -156,5 +174,14 @@
   </data>
   <data name="ultraball" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Ultraball.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wattrus_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wattrus_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wattrus_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wattrus_front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="wattrus_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\wattrus_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

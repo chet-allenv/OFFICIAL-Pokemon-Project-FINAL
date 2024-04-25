@@ -15,16 +15,20 @@ namespace OFFICIAL_Pokemon_Project_FINAL
     public class Pokemon
     {
 
-        public string name {  get; set; }
+        public string Name {  get; set; }
         
-        public Image[] sprites { get; set; } // Holds both front and back sprite. Front is index 0 and back is index 1
-        public int attack { get; set; }
-        public int defense { get; set; }
-        public int special { get; set; }
-        public int speed { get; set; }
-        public int health { get; set; }
-        public int level { get; set; }
-        public string type { get; set; }
+        public Image[] Sprites { get; set; } // Holds both front and back sprite. Front is index 0 and back is index 1
+        public int Attack { get; set; }
+        public int Defense { get; set; }
+        public int Special { get; set; }
+        public int Speed { get; set; }
+        public int Health { get; set; }
+        public int Level { get; set; }
+        public string Type1 { get; set; }
+
+#nullable enable
+        public string? Type2 { get; set; }
+#nullable disable
 
         public string Status { get; set; } = "";
 
@@ -34,69 +38,71 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         private readonly Random rng = new Random();
 
-        public Pokemon(string name, Image frontSprite, Image backSprite, string type, int level)
+        public Pokemon(string name, Image frontSprite, Image backSprite, string type1, string type2, int level)
         {
 
-            this.name = name;
-            sprites = [frontSprite, backSprite];
-            attack = Generate_Stat();
-            defense = Generate_Stat();
-            special = Generate_Stat();
-            speed = Generate_Stat();
-            health = Generate_Stat(100, 280);
-            this.level = level;
-            this.type = type;
+            this.Name = name;
+            Sprites = [frontSprite, backSprite];
+            Attack = Generate_Stat();
+            Defense = Generate_Stat();
+            Special = Generate_Stat();
+            Speed = Generate_Stat();
+            Health = Generate_Stat(100, 280);
+            Level = level;
+            Type1 = type1;
+            Type2 = type2;
 
-            moveSet = new Attack[2];
+            moveSet = new Attack[4];
         }
 
         private int Generate_Stat(int low = 5, int high = 25)
         {
-            return rng.Next(low, high) + 2 * (2 * this.level / 5 + 2);
+            return rng.Next(low, high) + 2 * (2 * this.Level / 5 + 2);
         }
 
-        public bool Is_Alive() { return this.health > 0; }
+        public bool Is_Alive() { return this.Health > 0; }
 
-        public void Attack(int attackNumber, Pokemon target, ProgressBar targetHealthBar)
+        public void UseAttack(int attackNumber, Pokemon target, ProgressBar targetHealthBar)
         {
             moveSet[attackNumber].Use(this, target, targetHealthBar);
         }
 
         public Image Get_Front_Sprite()
         {
-            return sprites[0];
+            return Sprites[0];
         }
 
         public Image Get_Back_Sprite()
         {
-            return sprites[1];
+            return Sprites[1];
         }
     }
 
-    public class Charmander : Pokemon
-    {
 
-        public Charmander() : base("Charmander", Resources.charmander, Resources.charmander_back, "Fire", 50)
+    public class Wattrus : Pokemon
+    {
+        public Wattrus() : base("Wattrus", Resources.wattrus_front, Resources.wattrus_back, "Electric", "Ice", 50)
         {
-            moveSet = [new Fire_Breath(), new Ember_Attack()];
+            // implement later
+            moveSet = [new Thunderbolt(), new Thunder_Wave(), new Ice_Beam(), new Ice_Breath()];
         }
     }
 
-    public class Squirtle : Pokemon
+    public class Nautighoul : Pokemon
     {
-
-        public Squirtle() : base("Squirtle", Resources.squirtle, Resources.squirtle_back, "Water", 50)
+        public Nautighoul() : base("Nautighoul", Resources.naughtighoul_front, Resources.naughtighoul_back, "Water", "Ghost", 50)
         {
-            moveSet = [new Ice_Breath(), new Bubble_Attack()];
+            // implement later
+            // moveSet = [Water Attack, Water Attack, Ghost Attack, Ghost Attack]
         }
     }
 
-    public class Bulbasaur : Pokemon
+    public class Chainsprout : Pokemon
     {
-
-        public Bulbasaur() : base("Bulbasaur", Resources.bulbasaur, Resources.bulbasaur_back, "Grass", 50)
+        public Chainsprout() : base("Chainsprout", Resources.chainsprout_front, Resources.chainsprout_back, "Grass", "Steel", 50)
         {
-            moveSet = [new Poison_Breath(), new Vine_Whip_Attack()];
+            // implement later
+            // moveSet = [Grass Attack, Grass Attack, Steel Attack, Steel Attack]
         }
     }
 }
