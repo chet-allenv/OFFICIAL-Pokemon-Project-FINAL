@@ -1,45 +1,53 @@
 ﻿using OFFICIAL_Pokemon_Project_FINAL.Properties;
 using System;
 using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
-using System.Security.Cryptography;
-using System.Text;
-using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace OFFICIAL_Pokemon_Project_FINAL
 {
+
+    /// <summary>
+    /// This method contains all of the game logic and actively runs the game. It also implements buttons that the user can press. It implements
+    /// the Windows Form class as it is a Windows Form object.
+    /// </summary>
     public partial class Battle_Screen : Form
     {
 
+        /// Creates the sleepTimer timer that is used to put the program to sleep to allow the user to read
         System.Timers.Timer sleepTimer = new System.Timers.Timer(1000);
-        volatile int time;
+        volatile int time; // This is time in seconds that the program is currently asleep for
 
+        // Creates two Pokemon instances for the player and the enemy
         private Pokemon enemyPokemon;
         private Pokemon playerPokemon;
 
-        private bool is_Player_Turn = false;
-        private bool is_Attack_Button_Pressed = false;
-        private bool is_Pokeball_Button_Pressed = false;
-        private bool is_Option_Button_Pressed = false;
-        private bool is_Healing_Item_Button_Pressed = false;
-        private bool is_Run_Button_Pressed = false;
-        private bool ranAway = false;
+        // Creates a lot of boolean variables that establish states that the program is in
+        private bool is_Player_Turn = false; // Determines if it is the player's turn
+        private bool is_Attack_Button_Pressed = false; // Determines if the buttons that represent the ACTUAL attacks are pressed
+        private bool is_Pokeball_Button_Pressed = false; // Checks if one of the ACTUAL pokeball buttons are pressed
+        private bool is_Option_Button_Pressed = false; // Checks if one of the four option buttons are pressed
+        private bool is_Healing_Item_Button_Pressed = false; // Checks if one of the ACTUAL healing item buttons are pressed
+        private bool is_Run_Button_Pressed = false; // Checks if the run button has been pressed.
+        private bool ranAway = false; // Checks if the player has run away.
 
-        private readonly Random rng = new Random();
-
+        // A Random instance that is used throughout the program to generate numebrs.
+        private readonly Random rng = new();
+           
+        // Lists that hold the healing items the player has and the pokeballs they have respectively
         public List<HealingItem> inventory = [new Potion(), new SuperPotion(), new HyperPotion(), new FullHeal()];
         public List<GenericPokeball> pokeballs = [new Pokeball(), new GreatBall(), new UltraBall(), new MasterBall()];
 
+        // The number of turn that it is.
         public int turnNumber = 0;
 
+        // Constructor
         public Battle_Screen()
         {
+            // Initializes the Visual Studio components like buttons and textboxes
             InitializeComponent();
 
             enemyPokemon = new Wattrus();
@@ -48,13 +56,14 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Enemy_Health_Bar.Maximum = enemyPokemon.Health;
             Enemy_Health_Bar.Value = enemyPokemon.Health;
 
-            Player_Health_Bar.Maximum = playerPokemon.Health;
-            Player_Health_Bar.Value = playerPokemon.Health;
+            Player_Health_Bar.Maximum = playerPokemon.health;
+            Player_Health_Bar.Value = playerPokemon.health;
 
+            // Updates the statusLabels using the updateStatusLabels() method
             updateStatusLabels();
 
             Debug.WriteLine(Enemy_Health_Bar.Value);
-            Debug.WriteLine(enemyPokemon.Health);
+            Debug.WriteLine(enemyPokemon.health);
         }
 
         private void Update(object sender, EventArgs e)
@@ -62,20 +71,22 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             if (!enemyPokemon.Is_Alive())
             {
                 Enemy_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Enemy {enemyPokemon.Name} has died";
+                Message_Box.Text = $"Enemy {enemyPokemon.name} has died";
             }
 
             else if (!playerPokemon.Is_Alive())
             {
                 Player_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Your {playerPokemon.Name} has died";
+                Message_Box.Text = $"Your {playerPokemon.name} has died";
             }
         }
 
         public void Delay(int delay = 1)
         {
+            // Resets time to 0
             time = 0;
 
+            // Sets the elapsed property of Elapsed 
             sleepTimer.Elapsed += new System.Timers.ElapsedEventHandler(SleepTimer_Elapsed);
             sleepTimer.Start();
             while (time < delay) ;
@@ -122,19 +133,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             SetStartingTurnNumber();
 
-            // MUST BE LAST
-            Updater.Start();
-
             RunGame();
-        }
-
-        public async void Test_Sleep_Method()
-        {
-            Message_Box.Text = "Im going to sleep";
-
-            await Task.Run(() => Delay(5));
-
-            Message_Box.Text = "I'm awake!";
         }
 
         private Pokemon Pick_Pokemon()
@@ -165,32 +164,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             var newBattleScreen = new Battle_Screen();
 
             newBattleScreen.Show();
-        }
-
-        private void Damage_Button_Click(object sender, EventArgs e)
-        {
-            if (Enemy_Health_Bar.Value > 10)
-            {
-                Enemy_Health_Bar.Value -= 10;
-            }
-
-            else
-            {
-                Enemy_Health_Bar.Value = 0;
-            }
-        }
-
-        private void Heal_Button_Click(object sender, EventArgs e)
-        {
-            if (Enemy_Health_Bar.Value + 10 > Enemy_Health_Bar.Maximum)
-            {
-                Enemy_Health_Bar.Value = Enemy_Health_Bar.Maximum;
-            }
-
-            else
-            {
-                Enemy_Health_Bar.Value += 10;
-            }
         }
 
         private Color Decide_Type_Color(string type)
@@ -325,11 +298,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             Message_Box.Text = message;
             ShowAttackBox.Visible = true;
-        }
-
-        private void Sleep_Test_Button_Click(object sender, EventArgs e)
-        {
-            Test_Sleep_Method();
         }
 
         public void SetStartingTurnNumber()

@@ -28,46 +28,51 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.Quit_Button = new System.Windows.Forms.Button();
-            this.Play_Button = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            Quit_Button = new System.Windows.Forms.Button();
+            Play_Button = new System.Windows.Forms.Button();
+            SuspendLayout();
             // 
             // Quit_Button
             // 
-            this.Quit_Button.BackgroundImage = global::OFFICIAL_Pokemon_Project_FINAL.Properties.Resources.quit_button;
-            this.Quit_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Quit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Quit_Button.Location = new System.Drawing.Point(302, 576);
-            this.Quit_Button.Name = "Quit_Button";
-            this.Quit_Button.Size = new System.Drawing.Size(327, 116);
-            this.Quit_Button.TabIndex = 1;
-            this.Quit_Button.UseVisualStyleBackColor = true;
-            this.Quit_Button.Click += new System.EventHandler(this.Quit_Button_Click);
+            Quit_Button.BackgroundImage = Properties.Resources.quit_button;
+            Quit_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            Quit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Quit_Button.Location = new System.Drawing.Point(605, 785);
+            Quit_Button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Quit_Button.Name = "Quit_Button";
+            Quit_Button.Size = new System.Drawing.Size(363, 145);
+            Quit_Button.TabIndex = 1;
+            Quit_Button.UseVisualStyleBackColor = true;
+            Quit_Button.Click += Quit_Button_Click;
             // 
             // Play_Button
             // 
-            this.Play_Button.BackgroundImage = global::OFFICIAL_Pokemon_Project_FINAL.Properties.Resources.play_button;
-            this.Play_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.Play_Button.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.Play_Button.Location = new System.Drawing.Point(302, 400);
-            this.Play_Button.Name = "Play_Button";
-            this.Play_Button.Size = new System.Drawing.Size(327, 116);
-            this.Play_Button.TabIndex = 0;
-            this.Play_Button.UseVisualStyleBackColor = true;
-            this.Play_Button.Click += new System.EventHandler(this.Play_Button_Click);
+            Play_Button.BackgroundImage = Properties.Resources.play_button;
+            Play_Button.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            Play_Button.Cursor = System.Windows.Forms.Cursors.Hand;
+            Play_Button.Location = new System.Drawing.Point(94, 785);
+            Play_Button.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Play_Button.Name = "Play_Button";
+            Play_Button.Size = new System.Drawing.Size(363, 145);
+            Play_Button.TabIndex = 0;
+            Play_Button.UseVisualStyleBackColor = true;
+            Play_Button.Click += Play_Button_Click;
             // 
             // Start_Screen
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 20F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(64)))), ((int)(((byte)(0)))));
-            this.ClientSize = new System.Drawing.Size(920, 782);
-            this.Controls.Add(this.Quit_Button);
-            this.Controls.Add(this.Play_Button);
-            this.Name = "Start_Screen";
-            this.Text = "Pokemon Project";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            BackColor = System.Drawing.Color.FromArgb(0, 64, 0);
+            BackgroundImage = Properties.Resources.Title_Screen;
+            BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            ClientSize = new System.Drawing.Size(1022, 978);
+            Controls.Add(Quit_Button);
+            Controls.Add(Play_Button);
+            DoubleBuffered = true;
+            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            Name = "Start_Screen";
+            Text = "Pokemon Project";
+            ResumeLayout(false);
         }
 
         #endregion
