@@ -23,7 +23,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         // Creates two Pokemon instances for the player and the enemy
         private Pokemon enemyPokemon;
-        private Pokemon playerPokemon;
+        public Pokemon playerPokemon;
 
         // Creates a lot of boolean variables that establish states that the program is in
         private bool is_Player_Turn = false; // Determines if it is the player's turn
@@ -48,22 +48,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public Battle_Screen()
         {
             // Initializes the Visual Studio components like buttons and textboxes
-            InitializeComponent();
-
-            enemyPokemon = new Wattrus();
-            playerPokemon = new Wattrus();
-
-            Enemy_Health_Bar.Maximum = enemyPokemon.Health;
-            Enemy_Health_Bar.Value = enemyPokemon.Health;
-
-            Player_Health_Bar.Maximum = playerPokemon.health;
-            Player_Health_Bar.Value = playerPokemon.health;
-
-            // Updates the statusLabels using the updateStatusLabels() method
-            updateStatusLabels();
-
-            Debug.WriteLine(Enemy_Health_Bar.Value);
-            Debug.WriteLine(enemyPokemon.health);
+            InitializeComponent(); 
         }
 
         private void Update(object sender, EventArgs e)
@@ -71,13 +56,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             if (!enemyPokemon.Is_Alive())
             {
                 Enemy_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Enemy {enemyPokemon.name} has died";
+                Message_Box.Text = $"Enemy {enemyPokemon.Name} has died";
             }
 
             else if (!playerPokemon.Is_Alive())
             {
                 Player_Sprite.BackgroundImage = null;
-                Message_Box.Text = $"Your {playerPokemon.name} has died";
+                Message_Box.Text = $"Your {playerPokemon.Name} has died";
             }
         }
 
@@ -102,6 +87,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
         private void Battle_Screen_Load(object sender, EventArgs e)
         {
+            enemyPokemon = Pick_Pokemon();
+
+            Enemy_Health_Bar.Maximum = enemyPokemon.Health;
+            Enemy_Health_Bar.Value = enemyPokemon.Health;
+
+            Player_Health_Bar.Maximum = playerPokemon.Health;
+            Player_Health_Bar.Value = playerPokemon.Health;
 
             Enemy_Sprite.BackgroundImage = enemyPokemon.Get_Front_Sprite();
             Player_Sprite.BackgroundImage = playerPokemon.Get_Back_Sprite();
@@ -132,6 +124,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             fullHealButton.Text = $"Full Heal: {inventory[3].Amount}";
 
             SetStartingTurnNumber();
+            updateStatusLabels();
 
             RunGame();
         }
@@ -454,7 +447,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                         }
                     }
 
-                    bool[] testedNums = [enemyPokemon.moveSet[0].PowerPoints > 0, enemyPokemon.moveSet[1].PowerPoints > 0];
+                    bool[] testedNums = [enemyPokemon.moveSet[0].PowerPoints > 0, enemyPokemon.moveSet[1].PowerPoints > 0, enemyPokemon.moveSet[2].PowerPoints > 0, enemyPokemon.moveSet[3].PowerPoints > 0];
 
                     bool outOfMoves = testedNums.All(var => var == false);
 
@@ -465,7 +458,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     {
                         while (!attackUsed)
                         {
-                            int randAttackNum = rng.Next(0, 2);
+                            int randAttackNum = rng.Next(0, 4);
 
                             if (testedNums[randAttackNum] == false)
                             {

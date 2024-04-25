@@ -24,10 +24,10 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         private void Play_Button_Click(object sender, EventArgs e)
         {
             // Creates a new Battle_Screen instance
-            var newBattleScreen = new Battle_Screen();
+            var mySelect = new Pokemon_Select();
 
             // Shows the newly created Battle_Screen instance
-            newBattleScreen.Show();
+            mySelect.Show();
 
             // Closes the currently open Start_Screen form
             this.Close();

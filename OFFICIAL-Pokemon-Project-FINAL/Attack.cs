@@ -281,7 +281,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
     public class Thunder_Wave : Special_Attack
     {
-        public Thunder_Wave() : base(0, 100, "Thunder Wave", "Normal", 10) { }
+        public Thunder_Wave() : base(0, 100, "Thunder Wave", "Electric", 10) { }
 
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
@@ -333,16 +333,18 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
             int num = rng.Next(0, 10);
-            string message = "";
+            string message = base.Use(user, target, targetHealthBar); ;
 
 
-            if (num == 0)
+            if (num == 0 &&
+                !message.Contains("missed", StringComparison.CurrentCultureIgnoreCase) &&
+                !message.Contains("unable", StringComparison.CurrentCultureIgnoreCase))
             {
-                target.Status = "Paralyzed";
-                message = $"{target.Name} was paralyzed";
+                target.Status = "paralyzed";
+                message += $". {target.Name} was paralyzed.";
             }
 
-            return message + base.Use(user, target, targetHealthBar);
+            return message;
         }
     }
     public class Ice_Beam : Special_Attack
@@ -352,17 +354,100 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
         {
             int num = rng.Next(0, 10);
-            string message = "";
+            string message = base.Use(user, target, targetHealthBar);
 
 
-            if (num == 0)
+            if (num == 0 &&
+                !message.Contains("missed", StringComparison.CurrentCultureIgnoreCase) &&
+                !message.Contains("unable", StringComparison.CurrentCultureIgnoreCase))
             {
-                target.Status = "Frozen";
-                message = $"{target.Name} was Frozen";
+            
+                target.Status = "frozen";
+                message += $". {target.Name} was frozen.";
             }
 
-            return message + base.Use(user, target, targetHealthBar);
+            return message;
         }
     }
 
+    public class Hydro_Pump : Special_Attack
+    {
+        public Hydro_Pump() : base(110, 80, "Hydro Pump", "Water", 5) { }
+    }
+
+    public class Anchor_Slam : Physical_Attack
+    {
+        public Anchor_Slam() : base(150, 50, "Anchor Slam", "Steel", 5) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            int num = rng.Next(0, 2);
+            string message = base.Use(user, target, targetHealthBar); ;
+
+
+            if (num == 0 && 
+                !message.Contains("missed", StringComparison.CurrentCultureIgnoreCase) && 
+                !message.Contains("unable", StringComparison.CurrentCultureIgnoreCase))
+            {
+                target.Status = "paralyzed";
+                message += $". {target.Name} was paralyzed.";
+            }
+
+            return message;
+        }
+    }
+
+    public class Shadow_Ball : Physical_Attack
+    {
+        public Shadow_Ball() : base(80, 100, "Shadow Ball", "Ghost", 15) { }
+    }
+
+    public class Ectoplasm : Physical_Attack
+    {
+        public Ectoplasm() : base(0, 100, "Ectoplasm", "Ghost", 10) { }
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "poisoned";
+            PowerPoints--;
+
+            return $"{user.Name} used ectoplasm and poisoned {target.Name}!";
+        }
+
+    }
+
+    public class Razor_Leaf : Special_Attack
+    {
+        public Razor_Leaf() : base(55, 95, "Razor Leaf", "Grass", 25) { }
+    }
+
+    public class Chainsaw : Physical_Attack
+    {
+        public Chainsaw() : base(100, 100, "Chainsaw", "Steel", 10) { }
+    }
+
+    public class Riposte : Special_Attack
+    {
+        public Riposte() : base(0, 100, "Riposte", "Normal", 5) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            PowerPoints--;
+
+            user.Attack += 25;
+            user.Defense += 25;
+
+            return $"{user.Name} entered a riposte stance and raised their attack and defence";
+        }
+    }
 }

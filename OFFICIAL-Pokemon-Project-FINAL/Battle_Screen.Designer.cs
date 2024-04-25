@@ -48,6 +48,8 @@
             Attack_Button_1 = new System.Windows.Forms.Button();
             Attack_Button_2 = new System.Windows.Forms.Button();
             AttackPanelLayout = new System.Windows.Forms.TableLayoutPanel();
+            Attack_Button_4 = new System.Windows.Forms.Button();
+            Attack_Button_3 = new System.Windows.Forms.Button();
             UsePokeballButton = new System.Windows.Forms.Button();
             UseGreatBallButton = new System.Windows.Forms.Button();
             UseUltraBallButton = new System.Windows.Forms.Button();
@@ -61,8 +63,6 @@
             hyperPotionButton = new System.Windows.Forms.Button();
             Enemy_StatusLabel = new System.Windows.Forms.Label();
             Player_StatusLabel = new System.Windows.Forms.Label();
-            Attack_Button_3 = new System.Windows.Forms.Button();
-            Attack_Button_4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)Enemy_Sprite).BeginInit();
             ((System.ComponentModel.ISupportInitialize)Player_Sprite).BeginInit();
             OptionPanelLayout.SuspendLayout();
@@ -76,9 +76,10 @@
             // 
             Enemy_Sprite.BackColor = System.Drawing.Color.Transparent;
             Enemy_Sprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            Enemy_Sprite.Location = new System.Drawing.Point(609, 161);
+            Enemy_Sprite.Location = new System.Drawing.Point(427, 66);
+            Enemy_Sprite.Margin = new System.Windows.Forms.Padding(2);
             Enemy_Sprite.Name = "Enemy_Sprite";
-            Enemy_Sprite.Size = new System.Drawing.Size(360, 304);
+            Enemy_Sprite.Size = new System.Drawing.Size(252, 235);
             Enemy_Sprite.TabIndex = 0;
             Enemy_Sprite.TabStop = false;
             // 
@@ -86,9 +87,10 @@
             // 
             Player_Sprite.BackColor = System.Drawing.Color.Transparent;
             Player_Sprite.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            Player_Sprite.Location = new System.Drawing.Point(101, 395);
+            Player_Sprite.Location = new System.Drawing.Point(41, 202);
+            Player_Sprite.Margin = new System.Windows.Forms.Padding(2);
             Player_Sprite.Name = "Player_Sprite";
-            Player_Sprite.Size = new System.Drawing.Size(310, 295);
+            Player_Sprite.Size = new System.Drawing.Size(270, 210);
             Player_Sprite.TabIndex = 1;
             Player_Sprite.TabStop = false;
             // 
@@ -98,9 +100,10 @@
             Enemy_Name.BackColor = System.Drawing.Color.Transparent;
             Enemy_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             Enemy_Name.ForeColor = System.Drawing.SystemColors.Control;
-            Enemy_Name.Location = new System.Drawing.Point(-4, 82);
+            Enemy_Name.Location = new System.Drawing.Point(-3, 49);
+            Enemy_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             Enemy_Name.Name = "Enemy_Name";
-            Enemy_Name.Size = new System.Drawing.Size(259, 37);
+            Enemy_Name.Size = new System.Drawing.Size(180, 26);
             Enemy_Name.TabIndex = 2;
             Enemy_Name.Text = "Enemy Pokemon";
             // 
@@ -110,9 +113,10 @@
             Player_Name.BackColor = System.Drawing.Color.Transparent;
             Player_Name.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
             Player_Name.ForeColor = System.Drawing.SystemColors.Control;
-            Player_Name.Location = new System.Drawing.Point(623, 523);
+            Player_Name.Location = new System.Drawing.Point(436, 314);
+            Player_Name.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             Player_Name.Name = "Player_Name";
-            Player_Name.Size = new System.Drawing.Size(250, 37);
+            Player_Name.Size = new System.Drawing.Size(173, 26);
             Player_Name.TabIndex = 3;
             Player_Name.Text = "Player Pokemon";
             // 
@@ -121,9 +125,10 @@
             Exit_Button.BackColor = System.Drawing.Color.FromArgb(255, 128, 128);
             Exit_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             Exit_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Exit_Button.Location = new System.Drawing.Point(11, 7);
+            Exit_Button.Location = new System.Drawing.Point(8, 4);
+            Exit_Button.Margin = new System.Windows.Forms.Padding(2);
             Exit_Button.Name = "Exit_Button";
-            Exit_Button.Size = new System.Drawing.Size(133, 48);
+            Exit_Button.Size = new System.Drawing.Size(93, 29);
             Exit_Button.TabIndex = 4;
             Exit_Button.Text = "EXIT";
             Exit_Button.UseVisualStyleBackColor = false;
@@ -134,9 +139,10 @@
             Rerun_Button.BackColor = System.Drawing.Color.FromArgb(192, 255, 192);
             Rerun_Button.Cursor = System.Windows.Forms.Cursors.Hand;
             Rerun_Button.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, 0);
-            Rerun_Button.Location = new System.Drawing.Point(151, 7);
+            Rerun_Button.Location = new System.Drawing.Point(106, 4);
+            Rerun_Button.Margin = new System.Windows.Forms.Padding(2);
             Rerun_Button.Name = "Rerun_Button";
-            Rerun_Button.Size = new System.Drawing.Size(159, 48);
+            Rerun_Button.Size = new System.Drawing.Size(111, 29);
             Rerun_Button.TabIndex = 5;
             Rerun_Button.Text = "RERUN";
             Rerun_Button.UseVisualStyleBackColor = false;
@@ -144,35 +150,37 @@
             // 
             // Enemy_Health_Bar
             // 
-            Enemy_Health_Bar.Location = new System.Drawing.Point(-4, 173);
+            Enemy_Health_Bar.Location = new System.Drawing.Point(-3, 104);
+            Enemy_Health_Bar.Margin = new System.Windows.Forms.Padding(2);
             Enemy_Health_Bar.Name = "Enemy_Health_Bar";
-            Enemy_Health_Bar.Size = new System.Drawing.Size(307, 20);
+            Enemy_Health_Bar.Size = new System.Drawing.Size(215, 12);
             Enemy_Health_Bar.TabIndex = 6;
             // 
             // Message_Box
             // 
-            Message_Box.Location = new System.Drawing.Point(21, 708);
-            Message_Box.Margin = new System.Windows.Forms.Padding(6, 0, 6, 0);
+            Message_Box.Location = new System.Drawing.Point(15, 425);
+            Message_Box.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             Message_Box.Name = "Message_Box";
-            Message_Box.Size = new System.Drawing.Size(493, 77);
+            Message_Box.Size = new System.Drawing.Size(345, 46);
             Message_Box.TabIndex = 11;
             Message_Box.Text = "Place holder";
             // 
             // Player_Health_Bar
             // 
-            Player_Health_Bar.Location = new System.Drawing.Point(716, 618);
+            Player_Health_Bar.Location = new System.Drawing.Point(501, 371);
+            Player_Health_Bar.Margin = new System.Windows.Forms.Padding(2);
             Player_Health_Bar.Name = "Player_Health_Bar";
-            Player_Health_Bar.Size = new System.Drawing.Size(306, 18);
+            Player_Health_Bar.Size = new System.Drawing.Size(214, 11);
             Player_Health_Bar.TabIndex = 13;
             // 
             // ShowAttackBox
             // 
             ShowAttackBox.BackgroundImage = Properties.Resources.Attack_Button;
             ShowAttackBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ShowAttackBox.Location = new System.Drawing.Point(4, 5);
-            ShowAttackBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            ShowAttackBox.Cursor = System.Windows.Forms.Cursors.Hand;
+            ShowAttackBox.Location = new System.Drawing.Point(3, 3);
             ShowAttackBox.Name = "ShowAttackBox";
-            ShowAttackBox.Size = new System.Drawing.Size(238, 72);
+            ShowAttackBox.Size = new System.Drawing.Size(166, 43);
             ShowAttackBox.TabIndex = 17;
             ShowAttackBox.UseVisualStyleBackColor = true;
             ShowAttackBox.Click += ShowAttackBox_Click;
@@ -181,12 +189,12 @@
             // 
             HealingItemButton.BackgroundImage = Properties.Resources.Heal_Button;
             HealingItemButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            HealingItemButton.Cursor = System.Windows.Forms.Cursors.Hand;
             HealingItemButton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            HealingItemButton.Location = new System.Drawing.Point(250, 5);
-            HealingItemButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            HealingItemButton.Location = new System.Drawing.Point(175, 3);
             HealingItemButton.Name = "HealingItemButton";
             HealingItemButton.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            HealingItemButton.Size = new System.Drawing.Size(239, 72);
+            HealingItemButton.Size = new System.Drawing.Size(167, 43);
             HealingItemButton.TabIndex = 18;
             HealingItemButton.UseVisualStyleBackColor = true;
             HealingItemButton.Click += HealingItemButton_Click;
@@ -195,10 +203,10 @@
             // 
             CatchPokemonButton.BackgroundImage = Properties.Resources.Catch_Button;
             CatchPokemonButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            CatchPokemonButton.Location = new System.Drawing.Point(4, 87);
-            CatchPokemonButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            CatchPokemonButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            CatchPokemonButton.Location = new System.Drawing.Point(3, 52);
             CatchPokemonButton.Name = "CatchPokemonButton";
-            CatchPokemonButton.Size = new System.Drawing.Size(237, 73);
+            CatchPokemonButton.Size = new System.Drawing.Size(166, 44);
             CatchPokemonButton.TabIndex = 19;
             CatchPokemonButton.UseVisualStyleBackColor = true;
             CatchPokemonButton.Click += CatchButton_Click;
@@ -207,10 +215,10 @@
             // 
             RunButton.BackgroundImage = Properties.Resources.Run_Button;
             RunButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            RunButton.Location = new System.Drawing.Point(250, 87);
-            RunButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            RunButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            RunButton.Location = new System.Drawing.Point(175, 52);
             RunButton.Name = "RunButton";
-            RunButton.Size = new System.Drawing.Size(239, 73);
+            RunButton.Size = new System.Drawing.Size(167, 44);
             RunButton.TabIndex = 20;
             RunButton.UseVisualStyleBackColor = true;
             RunButton.Click += RunButton_Click;
@@ -225,22 +233,22 @@
             OptionPanelLayout.Controls.Add(HealingItemButton, 1, 0);
             OptionPanelLayout.Controls.Add(CatchPokemonButton, 0, 1);
             OptionPanelLayout.Controls.Add(RunButton, 1, 1);
-            OptionPanelLayout.Location = new System.Drawing.Point(21, 788);
-            OptionPanelLayout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            OptionPanelLayout.Location = new System.Drawing.Point(15, 473);
             OptionPanelLayout.Name = "OptionPanelLayout";
             OptionPanelLayout.RowCount = 2;
             OptionPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             OptionPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            OptionPanelLayout.Size = new System.Drawing.Size(493, 165);
+            OptionPanelLayout.Size = new System.Drawing.Size(345, 99);
             OptionPanelLayout.TabIndex = 11;
             // 
             // Attack_Button_1
             // 
+            Attack_Button_1.Cursor = System.Windows.Forms.Cursors.Hand;
             Attack_Button_1.ForeColor = System.Drawing.Color.White;
-            Attack_Button_1.Location = new System.Drawing.Point(6, 8);
-            Attack_Button_1.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            Attack_Button_1.Location = new System.Drawing.Point(4, 5);
+            Attack_Button_1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Attack_Button_1.Name = "Attack_Button_1";
-            Attack_Button_1.Size = new System.Drawing.Size(223, 103);
+            Attack_Button_1.Size = new System.Drawing.Size(156, 62);
             Attack_Button_1.TabIndex = 9;
             Attack_Button_1.Text = "Attack 1";
             Attack_Button_1.UseVisualStyleBackColor = true;
@@ -248,11 +256,12 @@
             // 
             // Attack_Button_2
             // 
+            Attack_Button_2.Cursor = System.Windows.Forms.Cursors.Hand;
             Attack_Button_2.ForeColor = System.Drawing.Color.White;
-            Attack_Button_2.Location = new System.Drawing.Point(241, 8);
-            Attack_Button_2.Margin = new System.Windows.Forms.Padding(6, 8, 6, 8);
+            Attack_Button_2.Location = new System.Drawing.Point(169, 5);
+            Attack_Button_2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             Attack_Button_2.Name = "Attack_Button_2";
-            Attack_Button_2.Size = new System.Drawing.Size(224, 103);
+            Attack_Button_2.Size = new System.Drawing.Size(157, 62);
             Attack_Button_2.TabIndex = 10;
             Attack_Button_2.Text = "Attack 2";
             Attack_Button_2.UseVisualStyleBackColor = true;
@@ -268,22 +277,45 @@
             AttackPanelLayout.Controls.Add(Attack_Button_3, 0, 1);
             AttackPanelLayout.Controls.Add(Attack_Button_1, 0, 0);
             AttackPanelLayout.Controls.Add(Attack_Button_2, 1, 0);
-            AttackPanelLayout.Location = new System.Drawing.Point(533, 713);
-            AttackPanelLayout.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            AttackPanelLayout.Location = new System.Drawing.Point(373, 428);
             AttackPanelLayout.Name = "AttackPanelLayout";
             AttackPanelLayout.RowCount = 2;
             AttackPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             AttackPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            AttackPanelLayout.Size = new System.Drawing.Size(471, 242);
+            AttackPanelLayout.Size = new System.Drawing.Size(330, 145);
             AttackPanelLayout.TabIndex = 16;
             AttackPanelLayout.Visible = false;
             // 
+            // Attack_Button_4
+            // 
+            Attack_Button_4.Cursor = System.Windows.Forms.Cursors.Hand;
+            Attack_Button_4.ForeColor = System.Drawing.Color.White;
+            Attack_Button_4.Location = new System.Drawing.Point(168, 75);
+            Attack_Button_4.Name = "Attack_Button_4";
+            Attack_Button_4.Size = new System.Drawing.Size(159, 67);
+            Attack_Button_4.TabIndex = 12;
+            Attack_Button_4.Text = "Attack 4";
+            Attack_Button_4.UseVisualStyleBackColor = true;
+            Attack_Button_4.Click += Attack_Button_4_Click;
+            // 
+            // Attack_Button_3
+            // 
+            Attack_Button_3.Cursor = System.Windows.Forms.Cursors.Hand;
+            Attack_Button_3.ForeColor = System.Drawing.Color.White;
+            Attack_Button_3.Location = new System.Drawing.Point(3, 75);
+            Attack_Button_3.Name = "Attack_Button_3";
+            Attack_Button_3.Size = new System.Drawing.Size(159, 67);
+            Attack_Button_3.TabIndex = 11;
+            Attack_Button_3.Text = "Attack 3";
+            Attack_Button_3.UseVisualStyleBackColor = true;
+            Attack_Button_3.Click += Attack_Button_3_Click;
+            // 
             // UsePokeballButton
             // 
-            UsePokeballButton.Location = new System.Drawing.Point(4, 5);
-            UsePokeballButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            UsePokeballButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            UsePokeballButton.Location = new System.Drawing.Point(3, 3);
             UsePokeballButton.Name = "UsePokeballButton";
-            UsePokeballButton.Size = new System.Drawing.Size(229, 113);
+            UsePokeballButton.Size = new System.Drawing.Size(160, 68);
             UsePokeballButton.TabIndex = 17;
             UsePokeballButton.Text = "Pokeball";
             UsePokeballButton.UseVisualStyleBackColor = true;
@@ -291,10 +323,10 @@
             // 
             // UseGreatBallButton
             // 
-            UseGreatBallButton.Location = new System.Drawing.Point(242, 5);
-            UseGreatBallButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            UseGreatBallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            UseGreatBallButton.Location = new System.Drawing.Point(169, 3);
             UseGreatBallButton.Name = "UseGreatBallButton";
-            UseGreatBallButton.Size = new System.Drawing.Size(230, 113);
+            UseGreatBallButton.Size = new System.Drawing.Size(161, 68);
             UseGreatBallButton.TabIndex = 18;
             UseGreatBallButton.Text = "Greatball";
             UseGreatBallButton.UseVisualStyleBackColor = true;
@@ -302,10 +334,10 @@
             // 
             // UseUltraBallButton
             // 
-            UseUltraBallButton.Location = new System.Drawing.Point(4, 128);
-            UseUltraBallButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            UseUltraBallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            UseUltraBallButton.Location = new System.Drawing.Point(3, 77);
             UseUltraBallButton.Name = "UseUltraBallButton";
-            UseUltraBallButton.Size = new System.Drawing.Size(229, 113);
+            UseUltraBallButton.Size = new System.Drawing.Size(160, 68);
             UseUltraBallButton.TabIndex = 19;
             UseUltraBallButton.Text = "Ultraball";
             UseUltraBallButton.UseVisualStyleBackColor = true;
@@ -313,10 +345,10 @@
             // 
             // UseMasterBallButton
             // 
-            UseMasterBallButton.Location = new System.Drawing.Point(242, 128);
-            UseMasterBallButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            UseMasterBallButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            UseMasterBallButton.Location = new System.Drawing.Point(169, 77);
             UseMasterBallButton.Name = "UseMasterBallButton";
-            UseMasterBallButton.Size = new System.Drawing.Size(230, 113);
+            UseMasterBallButton.Size = new System.Drawing.Size(161, 68);
             UseMasterBallButton.TabIndex = 20;
             UseMasterBallButton.Text = "Masterball";
             UseMasterBallButton.UseVisualStyleBackColor = true;
@@ -332,12 +364,13 @@
             PokeballPanelLayout.Controls.Add(UseMasterBallButton, 1, 1);
             PokeballPanelLayout.Controls.Add(UseGreatBallButton, 1, 0);
             PokeballPanelLayout.Controls.Add(UseUltraBallButton, 0, 1);
-            PokeballPanelLayout.Location = new System.Drawing.Point(370, 421);
+            PokeballPanelLayout.Location = new System.Drawing.Point(373, 425);
+            PokeballPanelLayout.Margin = new System.Windows.Forms.Padding(2);
             PokeballPanelLayout.Name = "PokeballPanelLayout";
             PokeballPanelLayout.RowCount = 2;
             PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             PokeballPanelLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            PokeballPanelLayout.Size = new System.Drawing.Size(476, 247);
+            PokeballPanelLayout.Size = new System.Drawing.Size(333, 148);
             PokeballPanelLayout.TabIndex = 21;
             PokeballPanelLayout.Visible = false;
             // 
@@ -345,10 +378,9 @@
             // 
             pokeballPictureBox.BackColor = System.Drawing.Color.Transparent;
             pokeballPictureBox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            pokeballPictureBox.Location = new System.Drawing.Point(736, 355);
-            pokeballPictureBox.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            pokeballPictureBox.Location = new System.Drawing.Point(515, 213);
             pokeballPictureBox.Name = "pokeballPictureBox";
-            pokeballPictureBox.Size = new System.Drawing.Size(103, 110);
+            pokeballPictureBox.Size = new System.Drawing.Size(72, 66);
             pokeballPictureBox.TabIndex = 22;
             pokeballPictureBox.TabStop = false;
             pokeballPictureBox.Visible = false;
@@ -363,21 +395,22 @@
             healingItemTableLayout.Controls.Add(fullHealButton, 1, 1);
             healingItemTableLayout.Controls.Add(superPotionButton, 1, 0);
             healingItemTableLayout.Controls.Add(hyperPotionButton, 0, 1);
-            healingItemTableLayout.Location = new System.Drawing.Point(370, 424);
+            healingItemTableLayout.Location = new System.Drawing.Point(370, 428);
+            healingItemTableLayout.Margin = new System.Windows.Forms.Padding(2);
             healingItemTableLayout.Name = "healingItemTableLayout";
             healingItemTableLayout.RowCount = 2;
             healingItemTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
             healingItemTableLayout.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            healingItemTableLayout.Size = new System.Drawing.Size(476, 247);
+            healingItemTableLayout.Size = new System.Drawing.Size(333, 148);
             healingItemTableLayout.TabIndex = 23;
             healingItemTableLayout.Visible = false;
             // 
             // potionButton
             // 
-            potionButton.Location = new System.Drawing.Point(4, 5);
-            potionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            potionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            potionButton.Location = new System.Drawing.Point(3, 3);
             potionButton.Name = "potionButton";
-            potionButton.Size = new System.Drawing.Size(229, 113);
+            potionButton.Size = new System.Drawing.Size(160, 68);
             potionButton.TabIndex = 17;
             potionButton.Text = "Use Potion";
             potionButton.UseVisualStyleBackColor = true;
@@ -385,10 +418,10 @@
             // 
             // fullHealButton
             // 
-            fullHealButton.Location = new System.Drawing.Point(242, 128);
-            fullHealButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            fullHealButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            fullHealButton.Location = new System.Drawing.Point(169, 77);
             fullHealButton.Name = "fullHealButton";
-            fullHealButton.Size = new System.Drawing.Size(230, 113);
+            fullHealButton.Size = new System.Drawing.Size(161, 68);
             fullHealButton.TabIndex = 20;
             fullHealButton.Text = "Use Full Heal";
             fullHealButton.UseVisualStyleBackColor = true;
@@ -396,10 +429,10 @@
             // 
             // superPotionButton
             // 
-            superPotionButton.Location = new System.Drawing.Point(242, 5);
-            superPotionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            superPotionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            superPotionButton.Location = new System.Drawing.Point(169, 3);
             superPotionButton.Name = "superPotionButton";
-            superPotionButton.Size = new System.Drawing.Size(230, 113);
+            superPotionButton.Size = new System.Drawing.Size(161, 68);
             superPotionButton.TabIndex = 18;
             superPotionButton.Text = "Use Super Potion";
             superPotionButton.UseVisualStyleBackColor = true;
@@ -407,10 +440,10 @@
             // 
             // hyperPotionButton
             // 
-            hyperPotionButton.Location = new System.Drawing.Point(4, 128);
-            hyperPotionButton.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
+            hyperPotionButton.Cursor = System.Windows.Forms.Cursors.Hand;
+            hyperPotionButton.Location = new System.Drawing.Point(3, 77);
             hyperPotionButton.Name = "hyperPotionButton";
-            hyperPotionButton.Size = new System.Drawing.Size(229, 113);
+            hyperPotionButton.Size = new System.Drawing.Size(160, 68);
             hyperPotionButton.TabIndex = 19;
             hyperPotionButton.Text = "Use Hyper Potion";
             hyperPotionButton.UseVisualStyleBackColor = true;
@@ -419,54 +452,28 @@
             // Enemy_StatusLabel
             // 
             Enemy_StatusLabel.ForeColor = System.Drawing.Color.White;
-            Enemy_StatusLabel.Location = new System.Drawing.Point(340, 118);
-            Enemy_StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Enemy_StatusLabel.Location = new System.Drawing.Point(238, 71);
             Enemy_StatusLabel.Name = "Enemy_StatusLabel";
-            Enemy_StatusLabel.Size = new System.Drawing.Size(71, 40);
+            Enemy_StatusLabel.Size = new System.Drawing.Size(50, 24);
             Enemy_StatusLabel.TabIndex = 24;
             Enemy_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // Player_StatusLabel
             // 
             Player_StatusLabel.ForeColor = System.Drawing.Color.White;
-            Player_StatusLabel.Location = new System.Drawing.Point(937, 555);
-            Player_StatusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            Player_StatusLabel.Location = new System.Drawing.Point(656, 333);
             Player_StatusLabel.Name = "Player_StatusLabel";
-            Player_StatusLabel.Size = new System.Drawing.Size(71, 40);
+            Player_StatusLabel.Size = new System.Drawing.Size(50, 24);
             Player_StatusLabel.TabIndex = 25;
             Player_StatusLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // Attack_Button_3
-            // 
-            Attack_Button_3.ForeColor = System.Drawing.Color.White;
-            Attack_Button_3.Location = new System.Drawing.Point(4, 77);
-            Attack_Button_3.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            Attack_Button_3.Name = "Attack_Button_3";
-            Attack_Button_3.Size = new System.Drawing.Size(157, 62);
-            Attack_Button_3.TabIndex = 11;
-            Attack_Button_3.Text = "Attack 3";
-            Attack_Button_3.UseVisualStyleBackColor = true;
-            Attack_Button_3.Click += Attack_Button_3_Click;
-            // 
-            // Attack_Button_4
-            // 
-            Attack_Button_4.ForeColor = System.Drawing.Color.White;
-            Attack_Button_4.Location = new System.Drawing.Point(169, 77);
-            Attack_Button_4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
-            Attack_Button_4.Name = "Attack_Button_4";
-            Attack_Button_4.Size = new System.Drawing.Size(157, 62);
-            Attack_Button_4.TabIndex = 12;
-            Attack_Button_4.Text = "Attack 4";
-            Attack_Button_4.UseVisualStyleBackColor = true;
-            Attack_Button_4.Click += Attack_Button_4_Click;
-            // 
             // Battle_Screen
             // 
-            AutoScaleDimensions = new System.Drawing.SizeF(10F, 25F);
+            AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.battle_screen;
             BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            ClientSize = new System.Drawing.Size(1021, 978);
+            ClientSize = new System.Drawing.Size(715, 587);
             Controls.Add(Player_StatusLabel);
             Controls.Add(Enemy_StatusLabel);
             Controls.Add(healingItemTableLayout);
@@ -483,6 +490,7 @@
             Controls.Add(Enemy_Name);
             Controls.Add(Player_Sprite);
             Controls.Add(Enemy_Sprite);
+            Margin = new System.Windows.Forms.Padding(2);
             Name = "Battle_Screen";
             Text = " ";
             Load += Battle_Screen_Load;

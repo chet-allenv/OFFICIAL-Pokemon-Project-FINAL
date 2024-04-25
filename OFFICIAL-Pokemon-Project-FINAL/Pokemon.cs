@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -55,9 +56,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             moveSet = new Attack[4];
         }
 
-        private int Generate_Stat(int low = 5, int high = 25)
+        public int Generate_Stat(int low = 5, int high = 25)
         {
-            return rng.Next(low, high) + 2 * (2 * this.Level / 5 + 2);
+            return rng.Next(low, high);
         }
 
         public bool Is_Alive() { return this.Health > 0; }
@@ -85,6 +86,12 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             // implement later
             moveSet = [new Thunderbolt(), new Thunder_Wave(), new Ice_Beam(), new Ice_Breath()];
+
+            Attack = 50 + Generate_Stat(-20, 20);
+            Defense = 150 + Generate_Stat(-20, 20);
+            Speed = 25 + Generate_Stat(-20, 20);
+            Special = 100 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
         }
     }
 
@@ -93,7 +100,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public Nautighoul() : base("Nautighoul", Resources.naughtighoul_front, Resources.naughtighoul_back, "Water", "Ghost", 50)
         {
             // implement later
-            // moveSet = [Water Attack, Water Attack, Ghost Attack, Ghost Attack]
+            moveSet = [new Hydro_Pump(), new Anchor_Slam(), new Shadow_Ball(), new Ectoplasm()];
+
+            Attack = 120 + Generate_Stat(-20, 20);
+            Defense = 75 + Generate_Stat(-20, 20);
+            Speed = 50 + Generate_Stat(-20, 20);
+            Special = 100 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
         }
     }
 
@@ -102,7 +115,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         public Chainsprout() : base("Chainsprout", Resources.chainsprout_front, Resources.chainsprout_back, "Grass", "Steel", 50)
         {
             // implement later
-            // moveSet = [Grass Attack, Grass Attack, Steel Attack, Steel Attack]
+            moveSet = [new Vine_Whip_Attack(), new Razor_Leaf(), new Chainsaw(), new Riposte()];
+
+            Attack = 100 + Generate_Stat(-20, 20);
+            Defense = 100 + Generate_Stat(-20, 20);
+            Speed = 20 + Generate_Stat(-20, 20);
+            Special = 75 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
         }
     }
 }
