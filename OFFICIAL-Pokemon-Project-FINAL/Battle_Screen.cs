@@ -132,7 +132,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         private Pokemon Pick_Pokemon()
         {
 
-            switch (rng.Next(3))
+            switch (rng.Next(6))
             {
                 case 0:
                     return new Wattrus();
@@ -140,6 +140,12 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                     return new Nautighoul();
                 case 2:
                     return new Chainsprout();
+                case 3:
+                    return new Rockmoth();
+                case 4:
+                    return new PsychicFlying();
+                case 5:
+                    return new FireDragon();
             }
 
             return null;
@@ -154,9 +160,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             this.Close();
 
-            var newBattleScreen = new Battle_Screen();
+            var newSelectScreen = new Pokemon_Select();
 
-            newBattleScreen.Show();
+            newSelectScreen.Show();
         }
 
         private Color Decide_Type_Color(string type)

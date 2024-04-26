@@ -163,6 +163,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap fire_dragon_back {
+            get {
+                object obj = ResourceManager.GetObject("fire_dragon_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fire_dragon_front {
+            get {
+                object obj = ResourceManager.GetObject("fire_dragon_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap fire_dragon_sprite {
+            get {
+                object obj = ResourceManager.GetObject("fire_dragon_sprite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap greatball {
             get {
                 object obj = ResourceManager.GetObject("greatball", resourceCulture);
@@ -243,9 +273,69 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        public static System.Drawing.Bitmap psychic_flying_back {
+            get {
+                object obj = ResourceManager.GetObject("psychic_flying_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap psychic_flying_front {
+            get {
+                object obj = ResourceManager.GetObject("psychic_flying_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap psychic_flying_sprite {
+            get {
+                object obj = ResourceManager.GetObject("psychic_flying_sprite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         public static System.Drawing.Bitmap quit_button {
             get {
                 object obj = ResourceManager.GetObject("quit_button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rockmoth_back {
+            get {
+                object obj = ResourceManager.GetObject("rockmoth_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rockmoth_front {
+            get {
+                object obj = ResourceManager.GetObject("rockmoth_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap rockmoth_sprite {
+            get {
+                object obj = ResourceManager.GetObject("rockmoth_sprite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

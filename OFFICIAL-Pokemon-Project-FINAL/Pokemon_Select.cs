@@ -40,5 +40,29 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             myBS.playerPokemon = new Wattrus();
             myBS.Show();
         }
+
+        private void rockmothButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Battle_Screen myBS = new();
+            myBS.playerPokemon = new Rockmoth();
+            myBS.Show();
+        }
+
+        private void psyflyButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Battle_Screen myBS = new();
+            myBS.playerPokemon = new PsychicFlying();
+            myBS.Show();
+        }
+
+        private void firedragButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+            Battle_Screen myBS = new();
+            myBS.playerPokemon = new FireDragon();
+            myBS.Show();
+        }
     }
 }

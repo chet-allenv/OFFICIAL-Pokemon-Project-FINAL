@@ -124,4 +124,48 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Health = 500 + Generate_Stat(-100, 100);
         }
     }
+
+    public class Rockmoth : Pokemon
+    {
+        public Rockmoth() : base("Rockmoth", Resources.rockmoth_front, Resources.rockmoth_back, "Rock", "Bug", 50)
+        {
+            moveSet = [new Harden(), new Rock_Throw(), new Barbed_Stinger(), new Wing_Attack()];
+
+            Attack = 160 + Generate_Stat(-20, 20);
+            Defense = 100 + Generate_Stat(-20, 20);
+            Speed = 70 + Generate_Stat(-20, 20);
+            Special = 50 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
+        }
+    }
+
+    public class PsychicFlying : Pokemon
+    {
+
+        public PsychicFlying() : base("Psychic Flying", Resources.psychic_flying_front, Resources.psychic_flying_back, "Psychic", "Flying", 50)
+        {
+            moveSet = [new Lullaby(), new Dream_Eater(), new Psybeam(), new Arial_Acrobatics()];
+
+            Attack = 100 + Generate_Stat(-20, 20);
+            Defense = 60 + Generate_Stat(-20, 20);
+            Speed = 120 + Generate_Stat(-20, 20);
+            Special = 150 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
+        }
+    }
+
+    public class FireDragon : Pokemon
+    {
+        public FireDragon() : base("Fire Dragon", Resources.fire_dragon_front, Resources.fire_dragon_back, "Fire", "Dragon", 50)
+        {
+
+            moveSet = [new Flamethrower_Attack(), new Fire_Breath(), new Dragon_Pulse(), new Dragon_Roar()];
+
+            Attack = 150 + Generate_Stat(-20, 20);
+            Defense = 95 + Generate_Stat(-20, 20);
+            Speed = 80 + Generate_Stat(-20, 20);
+            Special = 150 + Generate_Stat(-20, 20);
+            Health = 500 + Generate_Stat(-100, 100);
+        }
+    }
 }

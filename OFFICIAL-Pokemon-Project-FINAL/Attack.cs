@@ -209,7 +209,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
     public class Flamethrower_Attack : Special_Attack
     {
-        public Flamethrower_Attack() : base(70, 80, "Flamethrower", "Fire", 10) { }
+        public Flamethrower_Attack() : base(70, 100, "Flamethrower", "Fire", 10) { }
     }
 
     public class Bubble_Attack : Special_Attack
@@ -276,6 +276,31 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             PowerPoints--;
 
             return $"{user.Name} used fire breath and burned {target.Name}!";
+        }
+    }
+
+    public class Dragon_Pulse : Special_Attack
+    {
+        public Dragon_Pulse() : base(90, 100, "Dragon Pulse", "Dragon", 10) { }
+    }
+
+    public class Dragon_Roar : Special_Attack
+    {
+        public Dragon_Roar() : base(0, 100, "Dragon Roar", "Dragon", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            PowerPoints--;
+
+            target.Special -= 25;
+            target.Defense -= 25;
+
+            return $"{user.Name} let out a thunderous roar and lowered the special and defence of the target.";
         }
     }
 
@@ -448,6 +473,124 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             user.Defense += 25;
 
             return $"{user.Name} entered a riposte stance and raised their attack and defence";
+        }
+    }
+
+    public class Harden : Physical_Attack
+    {
+        public Harden() : base(0, 100, "Harden", "Rock", 5) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            PowerPoints--;
+
+            user.Defense += 50;
+
+            return $"{user.Name} hardened and raised its defence";
+        }
+    }
+
+    public class Rock_Throw : Physical_Attack
+    {
+        public Rock_Throw() : base(50, 90, "Rock Throw", "Rock", 15) { }
+    }
+
+    public class Barbed_Stinger : Physical_Attack
+    {
+        public Barbed_Stinger() : base(70, 100, "Barbed Stinger", "Bug", 20) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            int num = rng.Next(0, 5);
+            string message = base.Use(user, target, targetHealthBar); ;
+
+
+            if (num == 0 &&
+                !message.Contains("missed", StringComparison.CurrentCultureIgnoreCase) &&
+                !message.Contains("unable", StringComparison.CurrentCultureIgnoreCase))
+            {
+                target.Status = "poisoned";
+                message += $". {target.Name} was poisoned.";
+            }
+
+            return message;
+        }
+    }
+
+    public class Wing_Attack : Physical_Attack
+    {
+        public Wing_Attack() : base(60, 100, "Wing Attack", "Flying", 35) { }
+    }
+
+    public class Lullaby : Special_Attack
+    {
+        public Lullaby() : base(0, 100, "Lullaby", "Psychic", 5) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            target.Status = "asleep";
+            PowerPoints--;
+
+            return $"{user.Name} used lullaby and made {target.Name} fall asleep!";
+        }
+    }
+
+    public class Dream_Eater : Special_Attack
+    {
+        public Dream_Eater() : base(100, 100, "Dream Eater", "Psychic", 10) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+
+            if (PowerPoints <= 0)
+            {
+                return "Unable to use attack. You are out of PP!";
+            }
+
+            if (target.Status.ToLower().Equals("asleep"))
+            {
+                return base.Use(user, target, targetHealthBar);
+            }
+            else
+            {
+                return "The target must be asleep to deal damage with this move!";
+            }
+        }
+    }
+
+    public class Psybeam : Special_Attack
+    {
+        public Psybeam() : base(80, 100, "Psybeam", "Psychic", 15) { }
+    }
+
+    public class Arial_Acrobatics : Physical_Attack
+    {
+        public Arial_Acrobatics() : base(55, 100, "Arial Acrobatics", "Flying", 15) { }
+
+        public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
+        {
+            string message = base.Use(user, target, targetHealthBar); ;
+
+
+            if (!message.Contains("missed", StringComparison.CurrentCultureIgnoreCase) &&
+                !message.Contains("unable", StringComparison.CurrentCultureIgnoreCase))
+            {
+                user.Speed += 50;
+                message += $". {user.Name} increased their speed.";
+            }
+
+            return message;
         }
     }
 }
