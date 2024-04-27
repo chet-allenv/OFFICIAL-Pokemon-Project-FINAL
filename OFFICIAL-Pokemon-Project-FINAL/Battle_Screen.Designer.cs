@@ -414,7 +414,7 @@
             potionButton.TabIndex = 17;
             potionButton.Text = "Use Potion";
             potionButton.UseVisualStyleBackColor = true;
-            potionButton.Click += potionButton_Click;
+            potionButton.Click += PotionButton_Click;
             // 
             // fullHealButton
             // 
@@ -425,7 +425,7 @@
             fullHealButton.TabIndex = 20;
             fullHealButton.Text = "Use Full Heal";
             fullHealButton.UseVisualStyleBackColor = true;
-            fullHealButton.Click += fullHealButton_Click;
+            fullHealButton.Click += FullHealButton_Click;
             // 
             // superPotionButton
             // 
@@ -436,7 +436,7 @@
             superPotionButton.TabIndex = 18;
             superPotionButton.Text = "Use Super Potion";
             superPotionButton.UseVisualStyleBackColor = true;
-            superPotionButton.Click += superPotionButton_Click;
+            superPotionButton.Click += SuperPotionButton_Click;
             // 
             // hyperPotionButton
             // 
@@ -447,7 +447,7 @@
             hyperPotionButton.TabIndex = 19;
             hyperPotionButton.Text = "Use Hyper Potion";
             hyperPotionButton.UseVisualStyleBackColor = true;
-            hyperPotionButton.Click += hyperPotionButton_Click;
+            hyperPotionButton.Click += HyperPotionButton_Click;
             // 
             // Enemy_StatusLabel
             // 
