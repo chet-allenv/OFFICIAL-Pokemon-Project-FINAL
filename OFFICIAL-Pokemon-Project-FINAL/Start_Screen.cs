@@ -11,8 +11,12 @@ using System.Windows.Forms;
 
 namespace OFFICIAL_Pokemon_Project_FINAL
 {
+    /// <summary>
+    /// This is the opening screen that is shown to the users. Gives them the option to play or quit the game.
+    /// </summary>
     public partial class Start_Screen : Form
     {
+        // Constructor, it initializes all components.
         public Start_Screen()
         {
             InitializeComponent();

@@ -53,7 +53,7 @@
             chainSproutButton.Size = new System.Drawing.Size(128, 128);
             chainSproutButton.TabIndex = 0;
             chainSproutButton.UseVisualStyleBackColor = true;
-            chainSproutButton.Click += chainSproutButton_Click;
+            chainSproutButton.Click += ChainSproutButton_Click;
             // 
             // nautighoulButton
             // 
@@ -65,7 +65,7 @@
             nautighoulButton.Size = new System.Drawing.Size(128, 128);
             nautighoulButton.TabIndex = 1;
             nautighoulButton.UseVisualStyleBackColor = true;
-            nautighoulButton.Click += nautighoulButton_Click;
+            nautighoulButton.Click += NautighoulButton_Click;
             // 
             // wattrusButton
             // 
@@ -77,7 +77,7 @@
             wattrusButton.Size = new System.Drawing.Size(128, 128);
             wattrusButton.TabIndex = 2;
             wattrusButton.UseVisualStyleBackColor = true;
-            wattrusButton.Click += wattrusButton_Click;
+            wattrusButton.Click += WattrusButton_Click;
             // 
             // label1
             // 
@@ -116,7 +116,7 @@
             rockmothButton.Size = new System.Drawing.Size(128, 128);
             rockmothButton.TabIndex = 6;
             rockmothButton.UseVisualStyleBackColor = true;
-            rockmothButton.Click += rockmothButton_Click;
+            rockmothButton.Click += RockmothButton_Click;
             // 
             // label4
             // 
@@ -137,7 +137,7 @@
             psyflyButton.Size = new System.Drawing.Size(128, 128);
             psyflyButton.TabIndex = 8;
             psyflyButton.UseVisualStyleBackColor = true;
-            psyflyButton.Click += psyflyButton_Click;
+            psyflyButton.Click += PsyflyButton_Click;
             // 
             // label5
             // 
@@ -158,7 +158,7 @@
             firedragButton.Size = new System.Drawing.Size(128, 128);
             firedragButton.TabIndex = 10;
             firedragButton.UseVisualStyleBackColor = true;
-            firedragButton.Click += firedragButton_Click;
+            firedragButton.Click += FiredragButton_Click;
             // 
             // label6
             // 
