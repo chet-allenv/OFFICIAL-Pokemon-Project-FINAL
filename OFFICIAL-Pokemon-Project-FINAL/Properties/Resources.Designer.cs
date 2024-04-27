@@ -83,26 +83,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap bulbasaur {
-            get {
-                object obj = ResourceManager.GetObject("bulbasaur", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap bulbasaur_back {
-            get {
-                object obj = ResourceManager.GetObject("bulbasaur_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap Catch_Button {
             get {
                 object obj = ResourceManager.GetObject("Catch_Button", resourceCulture);
@@ -143,26 +123,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap charmander {
-            get {
-                object obj = ResourceManager.GetObject("charmander", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap charmander_back {
-            get {
-                object obj = ResourceManager.GetObject("charmander_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap fire_dragon_back {
             get {
                 object obj = ResourceManager.GetObject("fire_dragon_back", resourceCulture);
@@ -186,6 +146,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap fire_dragon_sprite {
             get {
                 object obj = ResourceManager.GetObject("fire_dragon_sprite", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flamindgo_back {
+            get {
+                object obj = ResourceManager.GetObject("flamindgo_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flamindgo_front {
+            get {
+                object obj = ResourceManager.GetObject("flamindgo_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap flamindgo_sprite {
+            get {
+                object obj = ResourceManager.GetObject("flamindgo_sprite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,36 +263,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap psychic_flying_back {
-            get {
-                object obj = ResourceManager.GetObject("psychic_flying_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap psychic_flying_front {
-            get {
-                object obj = ResourceManager.GetObject("psychic_flying_front", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap psychic_flying_sprite {
-            get {
-                object obj = ResourceManager.GetObject("psychic_flying_sprite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap quit_button {
             get {
                 object obj = ResourceManager.GetObject("quit_button", resourceCulture);
@@ -346,26 +306,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap Run_Button {
             get {
                 object obj = ResourceManager.GetObject("Run_Button", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap squirtle {
-            get {
-                object obj = ResourceManager.GetObject("squirtle", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap squirtle_back {
-            get {
-                object obj = ResourceManager.GetObject("squirtle_back", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

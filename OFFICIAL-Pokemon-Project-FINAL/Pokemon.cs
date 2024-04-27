@@ -139,10 +139,10 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         }
     }
 
-    public class PsychicFlying : Pokemon
+    public class Flamindgo : Pokemon
     {
 
-        public PsychicFlying() : base("Psychic Flying", Resources.psychic_flying_front, Resources.psychic_flying_back, "Psychic", "Flying", 50)
+        public Flamindgo() : base("Flamindgo", Resources.flamindgo_front, Resources.flamindgo_back, "Psychic", "Flying", 50)
         {
             moveSet = [new Lullaby(), new Dream_Eater(), new Psybeam(), new Arial_Acrobatics()];
 

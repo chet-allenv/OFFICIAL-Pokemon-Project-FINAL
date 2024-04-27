@@ -129,7 +129,7 @@
             // 
             // psyflyButton
             // 
-            psyflyButton.BackgroundImage = Properties.Resources.psychic_flying_sprite;
+            psyflyButton.BackgroundImage = Properties.Resources.flamindgo_sprite;
             psyflyButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             psyflyButton.Cursor = System.Windows.Forms.Cursors.Hand;
             psyflyButton.Location = new System.Drawing.Point(288, 264);
@@ -144,9 +144,9 @@
             label5.AutoSize = true;
             label5.Location = new System.Drawing.Point(318, 395);
             label5.Name = "label5";
-            label5.Size = new System.Drawing.Size(82, 15);
+            label5.Size = new System.Drawing.Size(64, 15);
             label5.TabIndex = 9;
-            label5.Text = "Psychic Flying";
+            label5.Text = "Flamindgo";
             // 
             // firedragButton
             // 

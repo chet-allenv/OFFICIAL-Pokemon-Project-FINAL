@@ -10,6 +10,9 @@ using System.Windows.Forms;
 
 namespace OFFICIAL_Pokemon_Project_FINAL
 {
+    /// <summary>
+    /// Screen that allows the user to select a pokemon to play as.
+    /// </summary>
     public partial class Pokemon_Select : Form
     {
         public Pokemon_Select()
@@ -89,7 +92,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         private void PsyflyButton_Click(object sender, EventArgs e)
         {
             // Calls the Generic_PokeSelectButton_Click() method with a new PsychicFlying instance
-            Generic_PokeSelectButton_Click(new PsychicFlying());
+            Generic_PokeSelectButton_Click(new Flamindgo());
         }
 
         /// <summary>
