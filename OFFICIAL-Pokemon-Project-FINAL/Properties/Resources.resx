@@ -181,15 +181,6 @@
   <data name="wattrus_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\wattrus_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="fire_dragon_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fire_dragon_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fire_dragon_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fire_dragon_front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="fire_dragon_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\fire_dragon_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
   <data name="rockmoth_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\rockmoth_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -207,5 +198,14 @@
   </data>
   <data name="flamindgo_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\flamindgo_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infernothorn_back" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infernothorn_back.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infernothorn_front" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infernothorn_front.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="infernothorn_sprite" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\infernothorn_sprite.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

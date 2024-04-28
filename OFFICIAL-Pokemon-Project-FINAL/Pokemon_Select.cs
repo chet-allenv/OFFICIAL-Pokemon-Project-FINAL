@@ -102,8 +102,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         /// <param name="e"> The event arguments. </param>
         private void FiredragButton_Click(object sender, EventArgs e)
         {
-            // Calls the Generic_PokeSelectButton_Click() method with a new FireDragon instance
-            Generic_PokeSelectButton_Click(new FireDragon());
+            // Calls the Generic_PokeSelectButton_Click() method with a new Infernothorn instance
+            Generic_PokeSelectButton_Click(new Infernothorn());
         }
     }
 }

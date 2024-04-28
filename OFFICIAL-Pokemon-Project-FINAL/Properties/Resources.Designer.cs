@@ -123,36 +123,6 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        public static System.Drawing.Bitmap fire_dragon_back {
-            get {
-                object obj = ResourceManager.GetObject("fire_dragon_back", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap fire_dragon_front {
-            get {
-                object obj = ResourceManager.GetObject("fire_dragon_front", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        public static System.Drawing.Bitmap fire_dragon_sprite {
-            get {
-                object obj = ResourceManager.GetObject("fire_dragon_sprite", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         public static System.Drawing.Bitmap flamindgo_back {
             get {
                 object obj = ResourceManager.GetObject("flamindgo_back", resourceCulture);
@@ -196,6 +166,36 @@ namespace OFFICIAL_Pokemon_Project_FINAL.Properties {
         public static System.Drawing.Bitmap Heal_Button {
             get {
                 object obj = ResourceManager.GetObject("Heal_Button", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap infernothorn_back {
+            get {
+                object obj = ResourceManager.GetObject("infernothorn_back", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap infernothorn_front {
+            get {
+                object obj = ResourceManager.GetObject("infernothorn_front", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        public static System.Drawing.Bitmap infernothorn_sprite {
+            get {
+                object obj = ResourceManager.GetObject("infernothorn_sprite", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

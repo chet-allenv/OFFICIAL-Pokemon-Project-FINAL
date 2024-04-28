@@ -150,14 +150,15 @@
             // 
             // firedragButton
             // 
-            firedragButton.BackgroundImage = Properties.Resources.fire_dragon_sprite;
+            firedragButton.BackColor = System.Drawing.Color.Transparent;
+            firedragButton.BackgroundImage = Properties.Resources.infernothorn_sprite;
             firedragButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             firedragButton.Cursor = System.Windows.Forms.Cursors.Hand;
             firedragButton.Location = new System.Drawing.Point(508, 264);
             firedragButton.Name = "firedragButton";
             firedragButton.Size = new System.Drawing.Size(128, 128);
             firedragButton.TabIndex = 10;
-            firedragButton.UseVisualStyleBackColor = true;
+            firedragButton.UseVisualStyleBackColor = false;
             firedragButton.Click += FiredragButton_Click;
             // 
             // label6
@@ -165,9 +166,9 @@
             label6.AutoSize = true;
             label6.Location = new System.Drawing.Point(539, 395);
             label6.Name = "label6";
-            label6.Size = new System.Drawing.Size(68, 15);
+            label6.Size = new System.Drawing.Size(74, 15);
             label6.TabIndex = 11;
-            label6.Text = "Fire Dragon";
+            label6.Text = "Infernothorn";
             // 
             // Pokemon_Select
             // 

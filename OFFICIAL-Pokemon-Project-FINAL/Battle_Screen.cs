@@ -165,7 +165,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 2 => new Chainsprout(),
                 3 => new Rockmoth(),
                 4 => new Flamindgo(),
-                5 => new FireDragon(),
+                5 => new Infernothorn(),
                 // The default case will return null if the random number doesn't match. (SHOULD NEVER BE REACHED)
                 _ => null,
             };

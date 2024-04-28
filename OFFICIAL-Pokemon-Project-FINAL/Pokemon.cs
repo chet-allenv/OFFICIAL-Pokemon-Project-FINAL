@@ -154,9 +154,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         }
     }
 
-    public class FireDragon : Pokemon
+    public class Infernothorn : Pokemon
     {
-        public FireDragon() : base("Fire Dragon", Resources.fire_dragon_front, Resources.fire_dragon_back, "Fire", "Dragon", 50)
+        public Infernothorn() : base("Infernothorn", Resources.infernothorn_front, Resources.infernothorn_back, "Fire", "Dragon", 50)
         {
 
             moveSet = [new Flamethrower_Attack(), new Fire_Breath(), new Dragon_Pulse(), new Dragon_Roar()];
