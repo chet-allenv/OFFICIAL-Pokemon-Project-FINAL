@@ -169,8 +169,10 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         }
     }
 
-    // subclass from attack for special attacks
-    public Special_Attack(int power, int accuracy, string name, string type, int powerPoints) : base(power, accuracy, name, type, powerPoints) { }
+    public class Special_Attack : Attack
+    {
+        // subclass from attack for special attacks
+        public Special_Attack(int power, int accuracy, string name, string type, int powerPoints) : base(power, accuracy, name, type, powerPoints) { }
 
         // Override method representing the use of a special attack
         public override string Use(Pokemon user, Pokemon target, ProgressBar targetHealthBar)
@@ -217,6 +219,20 @@ namespace OFFICIAL_Pokemon_Project_FINAL
 
             return message;
         }
+
+        public int Calculate_Damage(Pokemon user, Pokemon target, double STAB, double typeEffectiveness)
+        {
+            // random number for damage calculation 
+            int randomNumber = rng.Next(217, 256);
+
+            // calculate damage
+            double damage_DOUBLE = ((2 * user.Level / 5 + 2) * user.Special * BasePower / target.Special / 50 + 2) * STAB * typeEffectiveness * randomNumber / 100;
+            int damage = (int)damage_DOUBLE;
+
+            return damage;
+        }
+
+    }
 
     // class for attack named tackle which is a normal type physical attack
     public class Tackle_Attack : Physical_Attack
