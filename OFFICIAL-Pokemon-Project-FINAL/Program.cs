@@ -17,9 +17,10 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
 
-            var myStartScreen = new Start_Screen();
-            myStartScreen.Show();
-            Application.Run();
+            /// PART WRITTEN BY US
+            var myStartScreen = new Start_Screen(); // Creates new variable for a Start_Screen() instance
+            myStartScreen.Show(); // Shows the newly created instance
+            Application.Run(); // Runs the Application.
         }
     }
 }
