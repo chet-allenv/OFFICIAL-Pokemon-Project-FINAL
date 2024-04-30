@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -23,6 +24,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         // Creates two Pokemon instances for the player and the enemy
         private Pokemon enemyPokemon;
         public Pokemon playerPokemon;
+
+        public SoundPlayer playerSound = new("C:\\Users\\cheta\\Source\\Repos\\chet-allenv\\OFFICIAL-Pokemon-Project-FINAL\\OFFICIAL-Pokemon-Project-FINAL\\Resources\\BeepBox-Song.wav");
 
         // Creates a lot of boolean variables that establish states that the program is in
         private bool is_Player_Turn = false; // Determines if it is the player's turn
@@ -89,6 +92,11 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             // Debug.WriteLine(time);
         }
 
+        private void PlaySong()
+        {
+            playerSound.PlayLooping();
+        }
+
         /// <summary>
         /// Event handler for the Battle_Screen's load event. Establishes the battle screen with the 
         /// initial values and UI elements.
@@ -99,6 +107,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         {
             // Sets the enemyPokemon to a random pokemon using the Pick_Pokemon() method
             enemyPokemon = Pick_Pokemon();
+
+            PlaySong();
 
             // Sets the maximum and current health of the enemy pokemon's health bar using its health stat
             Enemy_Health_Bar.Maximum = enemyPokemon.Health;
