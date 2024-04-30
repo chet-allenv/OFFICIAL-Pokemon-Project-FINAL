@@ -25,7 +25,8 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         private Pokemon enemyPokemon;
         public Pokemon playerPokemon;
 
-        public SoundPlayer playerSound = new("C:\\Users\\cheta\\Source\\Repos\\chet-allenv\\OFFICIAL-Pokemon-Project-FINAL\\OFFICIAL-Pokemon-Project-FINAL\\Resources\\BeepBox-Song.wav");
+        // Creates a SoundPlayer instance to play music during the game!
+        public SoundPlayer battleMusic= new(Resources.Game_Music);
 
         // Creates a lot of boolean variables that establish states that the program is in
         private bool is_Player_Turn = false; // Determines if it is the player's turn
@@ -92,9 +93,13 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             // Debug.WriteLine(time);
         }
 
+        /// <summary>
+        /// Plays the song that we created during the battle scene
+        /// </summary>
         private void PlaySong()
         {
-            playerSound.PlayLooping();
+            // Uses SoundPlayer.PlayLooping() to loop the audio file associated with the battleMusic SoundPlayer instance
+            battleMusic.PlayLooping();
         }
 
         /// <summary>
@@ -108,6 +113,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             // Sets the enemyPokemon to a random pokemon using the Pick_Pokemon() method
             enemyPokemon = Pick_Pokemon();
 
+            // Using the PlaySong() method, it plays the music!
             PlaySong();
 
             // Sets the maximum and current health of the enemy pokemon's health bar using its health stat
@@ -246,6 +252,7 @@ namespace OFFICIAL_Pokemon_Project_FINAL
         /// <param name="moveNumber"> The index of the move in the player pokemon's move set. </param>
         private void Generic_AttackButton_Click(Button attackButton, int moveNumber)
         {
+
             // Checks if it is the player's turn, if not then it exits the method
             if (!is_Player_Turn)
             {
@@ -630,6 +637,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 // Waits for a delay
                 await Task.Run(() => Delay(4));
 
+                // Ends the music
+                battleMusic.Stop();
+
                 // Closes the current form and opens a new Start_Screen instance
                 this.Close();
                 new Start_Screen().Show();
@@ -645,6 +655,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
                 // Waits for a delay
                 await Task.Run(() => Delay(4));
 
+                // Ends the music
+                battleMusic.Stop();
+
                 // Closes the current form and opens a new Start_Screen instance
                 this.Close();
                 new Start_Screen().Show();
@@ -653,6 +666,9 @@ namespace OFFICIAL_Pokemon_Project_FINAL
             { // IF THE USER RAN
                 // Waits for a delay
                 await Task.Run(() => Delay(4));
+
+                // Ends the music
+                battleMusic.Stop();
 
                 // Closes the current form and opens a new Start_Screen instance
                 this.Close();
